@@ -89,9 +89,9 @@ The Disney Parks Accessibility App is a web application designed to provide deta
 |--------------|-----------------------------------------------------------------------------------|------------------------------------------------------------------|--------|
 | GET          | `/api/parks/`                                                                     | Get a list of all parks.                                         | Public |
 | GET          | `/api/parks/{parkId}/`                                                            | Get details of a specific park by ID.                            | Public |
+| GET          | `/api/parks/{parkId}/accessibility/{accessibilityId}/` | Get accessibility information for an attraction.                 | Public |
 | GET          | `/api/parks/{parkId}/attractions/`                                                | Get a list of all attractions in a specific park.                | Public |
 | GET          | `/api/parks/{parkId}/attractions/{attractionId}/`                                 | Get details of a specific attraction.                            | Public |
-| GET          | `/api/parks/{parkId}/attractions/{attractionId}/accessibility/{accessibilityId}/` | Get accessibility information for an attraction.                 | Public |
 
 
 
