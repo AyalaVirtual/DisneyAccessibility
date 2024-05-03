@@ -25,21 +25,15 @@ The Disney Parks Accessibility API is the backend component of a full-stack web 
 
 ## Technologies Used 
 
-- **Frontend:**
-    - React (JavaScript library for building user interfaces)
-    - Axios (HTTP client for making API requests)
-    - React Router (Library for routing within a React application)
-
-- **Backend:**
-    - Java 17 
-    - Maven 
-    - Spring Boot (Backend framework for RESTful APIs)
-    - Spring Data JPA (Data access layer for interacting with databases)
-    - H2 Database (In-memory database for development)
-    - Spring Web (Module for handling web requests)
-    - Postman
-    - Apache Tomcat
-    - IntelliJ 
+* Java 17 
+* Maven 
+* Spring Boot (Backend framework for RESTful APIs)
+* Spring Data JPA (Data access layer for interacting with databases)
+* H2 Database (In-memory database for development)
+* Spring Web (Module for handling web requests)
+* Postman
+* Apache Tomcat
+* IntelliJ 
 
 
 
@@ -105,13 +99,13 @@ The Disney Parks Accessibility API is the backend component of a full-stack web 
 
 
 
-### Links
+## Links
 * User Stories - https://docs.google.com/document/d/1mLiORi0NO0TcaMykAujzYsgFoyzLBELlFtPALw_Yj3c/edit?usp=sharing 
 
 * HTTP requests/endpoints spreadsheet - https://docs.google.com/spreadsheets/d/1xIWKhaml3FHhzpcYROyoGMMztVnEql5rJnGOybD2k2M/edit?usp=sharing 
 
 
-### Authors
+## Authors
 
 :woman_technologist: Erica Ayala
 
