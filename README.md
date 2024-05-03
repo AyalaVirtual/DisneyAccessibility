@@ -1,6 +1,25 @@
-# Disney Parks Accessibility 
+# Disney Parks Accessibility API 
 
-The Disney Parks Accessibility App is a web application designed to provide detailed accessibility information for attractions at Disney World parks. It aims to enhance the park experience for visitors with disabilities or special needs by offering personalized accessibility guides and resources.
+The Disney Parks Accessibility API is the backend component of a full-stack web application designed to provide detailed information related to Disney World parks, attractions, and accessibility features. It aims to assist visitors with disabilities or special needs in accessing detailed park and attraction information, including general accessibility details, interactive maps, and attraction descriptions. Future updates aim to enhance the park experience by offering personalized accessibility guides and resources. 
+
+
+
+## Features (Current and Planned)
+
+### Current Features
+
+* Park Information: Users can view a list of all parks and get details of a specific park.
+* Interactive Park Maps: Users can view an interactive map for each park to visualize its layout.
+* Attraction Information: Users can view attractions in a specific park and get details of a specific attraction.
+* Accessibility Information: Users can view general accessibility information for each park and detailed accessibility details for attractions.
+
+
+### Planned Features
+
+- **User Authentication**: Implement user registration and login for users to access full CRUD capabilities for managing their park plans.
+- **CRUD Operations for Park Plans**: Allow users to create, view, update, and delete park plans or routes within their profile.
+- **Route Optimization**: Implement a feature to calculate and create routes with the shortest distance between attractions in a park plan.
+- **Break Areas Suggestion**: Include suggestions for break areas along the route to accommodate users with mobility issues who may need rest stops.
 
 
 
@@ -16,27 +35,17 @@ The Disney Parks Accessibility App is a web application designed to provide deta
     - Maven 
     - Spring Boot (Backend framework for RESTful APIs)
     - Spring Data JPA (Data access layer for interacting with databases)
-    - H2 Database (In-memory database for development and testing)
+    - H2 Database (In-memory database for development)
     - Spring Web (Module for handling web requests)
     - Postman
     - Apache Tomcat
-    - IntelliJ
-
-
-
-## Features
-* Interactive maps of each Disney World park. 
-* Lists of attractions with detailed information.
-* Accessibility details for each attraction, including wheelchair accessibility, sensory considerations, and ride transfer options.
-* User-friendly interfaces for browsing attractions and accessibility information.
-* Back end APIs for retrieving park data, attraction details, and accessibility information.
+    - IntelliJ 
 
 
 
 ## Getting Started
 
 ### Prerequisites
-* Node.js and npm (for frontend development)
 * Java Development Kit (JDK) 8 or higher
 * IntelliJ IDEA or Eclipse IDE (recommended for Java development)
 * Git (optional but recommended for version control)
@@ -47,28 +56,28 @@ The Disney Parks Accessibility App is a web application designed to provide deta
    ```bash
    git clone https://github.com/your-username/disney-parks-accessibility.git
 
-2. **Frontend Setup:**
-   ```bash
-   cd frontend
-   npm install
-   ```
+2. **Backend Setup:** 
+   - Open the project in your IDE (IntelliJ IDEA or Eclipse). 
+   - Navigate to the project directory.
 
-3. **Backend Setup:**
-    - Open the project in your IDE (IntelliJ IDEA or Eclipse).
-    - Build and run the Spring Boot application (`DisneyParksAccessibilityApplication`).
+3. **Install Dependencies:**
+   - Install dependencies for both the backend modules.
 
-4. **Database Configuration (H2 Database):**
+4. **Build and Run the Spring Boot Application:**
+   - Build and run the Spring Boot application (`DisneyParksAccessibilityApplication`).
+
+5. **Database Configuration (H2 Database):**
     - The project is configured to use an H2 in-memory database for development.
     - Database configurations can be found in `application.properties` under `src/main/resources` in the backend module.
 
-5. **Start the Application:**
-    - Start the frontend development server:
-      ```bash
-      cd frontend
-      npm start
-      ```
-    - The frontend should now be accessible at `http://localhost:3000`.
-    - The backend API endpoints will be available at `http://localhost:8080`.
+6. **Start the Application:**
+    - Once the application is running, the backend API endpoints will be available at `http://localhost:8080`. 
+
+7. **Frontend Setup:**
+   - Follow the instructions in the frontend repository to set up and run the frontend application.
+
+8. **Accessing the Application:**
+    - Once the backend is running, you can access the application through the provided frontend interface or API endpoints as needed.
 
 
 
@@ -109,6 +118,12 @@ The Disney Parks Accessibility App is a web application designed to provide deta
 * [LinkedIn](https://www.linkedin.com/in/ayalavirtual)
 
 * [GitHub](https://www.github.com/AyalaVirtual)
+
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](link-to-license-file) file for details. 
 
 
 
