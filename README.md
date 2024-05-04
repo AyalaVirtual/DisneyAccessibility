@@ -36,9 +36,10 @@ The Disney Parks Accessibility API is the back-end component of a full-stack web
 * IntelliJ 
 
 
+
 ## Entity Relationship Diagram
 
-<img src="./images/DisneyParksAccessibilityERD.png" alt="ERD">
+<img src="images/DisneyParksAccessibilityAppERD.png" alt="ERD">
 
 
 
