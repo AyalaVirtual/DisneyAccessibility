@@ -63,7 +63,8 @@ The Disney Parks Accessibility API is the back-end component of a full-stack web
 3. **Install Dependencies:**
    - Install dependencies for both the backend modules. 
    - Ensure you have Java Development Kit (JDK) 8 or higher installed.
-   - Set up PostgreSQL:
+
+4. **Set up PostgreSQL:**
    - Install PostgreSQL on your machine if you haven't already.
    - Create a database for the project (e.g., disney_parks_db).
    - Update the database configurations in application.properties under src/main/resources in the backend module:
@@ -74,13 +75,13 @@ The Disney Parks Accessibility API is the back-end component of a full-stack web
      ```
 
 
-4. **Build and Run the Spring Boot Application:**
+5. **Build and Run the Spring Boot Application:**
    - Build and run the Spring Boot application (`DisneyParksAccessibilityApplication`).
 
-5. **Start the Application:**
+6. **Start the Application:**
     - Once the application is running, the backend API endpoints will be available at `http://localhost:8080`. 
 
-6. **Frontend Setup:**
+7. **Frontend Setup:**
    - Follow the instructions in the frontend repository to set up and run the frontend application.
 
 8. **Accessing the Application:**
