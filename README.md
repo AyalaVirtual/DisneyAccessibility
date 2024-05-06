@@ -39,7 +39,7 @@ The Disney Parks Accessibility API is the back-end component of a full-stack web
 
 ## Entity Relationship Diagram
 
-<img src="images/DisneyParksAccessibilityAppERD.png" alt="ERD">
+<img src="images/DisneyParksAccessibilityERD.png" alt="ERD">
 
 
 
@@ -90,13 +90,12 @@ The Disney Parks Accessibility API is the back-end component of a full-stack web
 
 ## HTTP Endpoints
 
-| Request Type | URL                                                                               | Functionality                                                    | Access |
-|--------------|-----------------------------------------------------------------------------------|------------------------------------------------------------------|--------|
-| GET          | `/api/parks/`                                                                     | Get a list of all parks.                                         | Public |
-| GET          | `/api/parks/{parkId}/`                                                            | Get details of a specific park by ID.                            | Public |
-| GET          | `/api/parks/{parkId}/accessibility/{accessibilityId}/` | Get accessibility information for an attraction.                 | Public |
-| GET          | `/api/parks/{parkId}/attractions/`                                                | Get a list of all attractions in a specific park.                | Public |
-| GET          | `/api/parks/{parkId}/attractions/{attractionId}/`                                 | Get details of a specific attraction.                            | Public |
+| Request Type | URL                                                                       | Functionality                                                                     | Access |
+|--------------|---------------------------------------------------------------------------|-----------------------------------------------------------------------------------|--------|
+| GET          | `/api/parks/`                                                             | Get a map and list of all parks.                                                  | Public |
+| GET          | `/api/parks/{parkId}/parkaccessibility/`                                  | Get accessibility information and a map for a specific park.                      | Public |
+| GET          | `/api/parks/{parkId}/attractions/`                                        | Get a list of all attractions and a map for a specific park.                      | Public |
+| GET          | `/api/parks/{parkId}/attractions/{attractionId}/attractionaccessibility/` | Get information about a specific attraction along with its accessibility details. | Public |
 
 
 
