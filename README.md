@@ -29,7 +29,7 @@ The Disney Parks Accessibility API is the back-end component of a full-stack web
 * Maven 
 * Spring Boot (Backend framework for RESTful APIs)
 * Spring Data JPA (Data access layer for interacting with databases)
-* H2 Database (In-memory database for development)
+* PostgreSQL (Relational database management system for production deployments) 
 * Spring Web (Module for handling web requests)
 * Postman
 * Apache Tomcat
@@ -61,19 +61,26 @@ The Disney Parks Accessibility API is the back-end component of a full-stack web
    - Navigate to the project directory.
 
 3. **Install Dependencies:**
-   - Install dependencies for both the backend modules.
+   - Install dependencies for both the backend modules. 
+   - Ensure you have Java Development Kit (JDK) 8 or higher installed.
+   - Set up PostgreSQL:
+   - Install PostgreSQL on your machine if you haven't already.
+   - Create a database for the project (e.g., disney_parks_db).
+   - Update the database configurations in application.properties under src/main/resources in the backend module:
+     ```properties
+     spring.datasource.url=jdbc:postgresql://localhost:5432/disney_parks_db
+     spring.datasource.username=your_username
+     spring.datasource.password=your_password
+     ```
+
 
 4. **Build and Run the Spring Boot Application:**
    - Build and run the Spring Boot application (`DisneyParksAccessibilityApplication`).
 
-5. **Database Configuration (H2 Database):**
-    - The project is configured to use an H2 in-memory database for development.
-    - Database configurations can be found in `application.properties` under `src/main/resources` in the backend module.
-
-6. **Start the Application:**
+5. **Start the Application:**
     - Once the application is running, the backend API endpoints will be available at `http://localhost:8080`. 
 
-7. **Frontend Setup:**
+6. **Frontend Setup:**
    - Follow the instructions in the frontend repository to set up and run the frontend application.
 
 8. **Accessing the Application:**
