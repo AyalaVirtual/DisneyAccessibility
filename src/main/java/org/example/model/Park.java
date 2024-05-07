@@ -32,12 +32,12 @@ public class Park {
 
 
     // This links the table representing the Park model to the table representing the ParkAccessibility model
-    @OneToOne(mappedBy = "park", cascade = CascadeType.ALL) // This means there is a one-to-one relationship between Park and ParkAccessibility that is mapped by the 'park' variable in the ParkAccessibility class. It also specifies that when you perform operations on a Park (like save or delete), the same operation should be cascaded to its associated ParkAccessibility. This ensures that the accessibility information is managed along with the park.
+    @OneToOne(mappedBy = "park", cascade = CascadeType.ALL) // This means there is a one-to-one relationship between Park and ParkAccessibility that is mapped by the 'park' variable in the ParkAccessibility class. 'cascade = CascadeType.ALL' ensures that when you perform operations (like save or delete) on a Park, its associated ParkAccessibility will also be saved or deleted
     private ParkAccessibility parkAccessibility;
 
 
-    @OneToMany(mappedBy = "park", orphanRemoval = true) // This means there is a one-to-many relationship between Park and Attraction that is mapped by the 'park' variable in the Accessibility class. orphanRemoval = true means that if we delete the park, delete the attraction as well
-    @LazyCollection(LazyCollectionOption.FALSE)  // This means when you fetch an instance of a park, fetch the associated attractions
+    @OneToMany(mappedBy = "park", orphanRemoval = true) // This means there is a one-to-many relationship between Park and Attraction that is mapped by the 'park' variable in the Accessibility class. 'orphanRemoval = true' means that if an Attraction entity is removed from a Park's collection, and that entity is not associated with any other parent entity, it should be deleted from the database
+    @LazyCollection(LazyCollectionOption.FALSE) // This means that the associated Attractions are loaded immediately when the Park entity is fetched from the database
     private List<Attraction> attractionList;
 
 

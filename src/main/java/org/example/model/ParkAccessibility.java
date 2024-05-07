@@ -47,9 +47,8 @@ public class ParkAccessibility {
     private String firstAidLocations;
 
     // This links the table representing the ParkAccessibility model to the table representing the Park model
-    @JsonIgnore // This prevents a stack overflow/API crashing from parks and parkAccessibility calling each other back and forth
-    @OneToOne(mappedBy = "park", cascade = CascadeType.ALL) // This means there is a one-to-one relationship between ParkAccessibility and Park that is mapped by the 'park' variable. It also specifies that when you perform operations on a Park (like save or delete), the same operation should be cascaded to its associated ParkAccessibility. This ensures that the accessibility information is managed along with the park.
-    @JoinColumn(name = "park_id") // This represents the foreign key in SQL joining the columns to connect the 2 tables
+    @OneToOne(optional = false) // This means that a ParkAccessibility record must always be associated with a Park record. A Park can exist without ParkAccessibility, but every ParkAccessibility must have a corresponding Park.
+    @JoinColumn(name = "park_id") // This means that the ParkAccessibility entity will have a foreign key column named park_id referring to the primary attribute id of our Park entity. This foreign key in SQL joins the columns to connect the 2 tables
     private Park park;
 
 
