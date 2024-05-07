@@ -31,9 +31,13 @@ public class Park {
 
 
     // This links the table representing the Park model to the table representing the ParkAccessibility model
-    @OneToOne(mappedBy = "park") // This means it's a one-to-one relationship that is mappedBy the variable representing the link to the other table.
-    @LazyCollection(LazyCollectionOption.FALSE)  // This means when you fetch an instance of a park, fetch the associated accessibility details
-    private List<ParkAccessibility> parkAccessibilityList;
+    @OneToOne(mappedBy = "park", cascade = CascadeType.ALL) // This means there is a one-to-one relationship between Park and ParkAccessibility that is mapped by the 'park' variable in the ParkAccessibility class. It also specifies that when you perform operations on a Park (like save or delete), the same operation should be cascaded to its associated ParkAccessibility. This ensures that the accessibility information is managed along with the park.
+    private ParkAccessibility parkAccessibility;
+
+
+    @OneToMany(mappedBy = "park", orphanRemoval = true) // This means there is a one-to-many relationship between Park and Attraction that is mapped by the 'park' variable in the Accessibility class. orphanRemoval = true means that if we delete the park, delete the attraction as well
+    @LazyCollection(LazyCollection.FALSE)  // This means when you fetch an instance of a park, fetch the associated attractions
+    private List<Attraction> attractionList;
 
 
     public Park() {
@@ -95,6 +99,22 @@ public class Park {
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
+    }
+
+    public ParkAccessibility getParkAccessibility() {
+        return parkAccessibility;
+    }
+
+    public void setParkAccessibility(ParkAccessibility parkAccessibility) {
+        this.parkAccessibility = parkAccessibility;
+    }
+
+    public List<Attraction> getAttractionList() {
+        return attractionList;
+    }
+
+    public void setAttractionList(List<Attraction> attractionList) {
+        this.attractionList = attractionList;
     }
 
 
