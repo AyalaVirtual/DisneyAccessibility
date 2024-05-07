@@ -3,6 +3,7 @@ package org.example.model;
 import jakarta.persistence.*;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
+import java.util.List;
 
 
 @Entity
@@ -36,7 +37,7 @@ public class Park {
 
 
     @OneToMany(mappedBy = "park", orphanRemoval = true) // This means there is a one-to-many relationship between Park and Attraction that is mapped by the 'park' variable in the Accessibility class. orphanRemoval = true means that if we delete the park, delete the attraction as well
-    @LazyCollection(LazyCollection.FALSE)  // This means when you fetch an instance of a park, fetch the associated attractions
+    @LazyCollection(LazyCollectionOption.FALSE)  // This means when you fetch an instance of a park, fetch the associated attractions
     private List<Attraction> attractionList;
 
 
@@ -115,6 +116,16 @@ public class Park {
 
     public void setAttractionList(List<Attraction> attractionList) {
         this.attractionList = attractionList;
+    }
+
+
+    /**
+     * This method adds attractions to the park's list of attractions
+     *
+     * @param attraction represents the attraction the user is trying to add to the park's list of attractions
+     */
+    public void addToAttractionList(Attraction attraction) {
+        attractionList.add(attraction);
     }
 
 
