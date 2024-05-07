@@ -44,6 +44,7 @@ public class ParkAccessibility {
     @Column
     private List<String> companionRestroomLocations;
 
+    @Column
     private String firstAidLocations;
 
     // This links the table representing the ParkAccessibility model to the table representing the Park model
