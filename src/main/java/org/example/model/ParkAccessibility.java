@@ -2,6 +2,7 @@ package org.example.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -14,7 +15,13 @@ public class ParkAccessibility {
     private Long id;
 
     @Column
-    private
+    private List<String> rentalLocations;
+
+    @Column
+    private List<String> wheelchairReplacementLocations;
+
+    @Column
+    private List<String>
 
     // This links the table representing the ParkAccessibility model to the table representing the Park model
     @JsonIgnore // This prevents a stack overflow/API crashing from parks and parkAccessibility calling each other back and forth
