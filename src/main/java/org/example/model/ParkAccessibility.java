@@ -21,7 +21,30 @@ public class ParkAccessibility {
     private List<String> wheelchairReplacementLocations;
 
     @Column
-    private List<String>
+    private List<String> breakLocations;
+
+    @Column
+    private List<String> stationaryBrailleMapLocations;
+
+    @Column
+    private String signLanguageSchedule;
+
+    @Column
+    private List<String> guestRelationsLocations;
+
+    @Column
+    private List<String> serviceAnimalRestrictions_Ride;
+
+    @Column
+    private List<String> serviceAnimalRestrictions_Board;
+
+    @Column
+    private List<String> serviceAnimalReliefAreas;
+
+    @Column
+    private List<String> companionRestroomLocations;
+
+    private String firstAidLocations;
 
     // This links the table representing the ParkAccessibility model to the table representing the Park model
     @JsonIgnore // This prevents a stack overflow/API crashing from parks and parkAccessibility calling each other back and forth
