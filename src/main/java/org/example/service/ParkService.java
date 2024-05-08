@@ -11,7 +11,6 @@ import java.util.Optional;
 
 @Service
 public class ParkService {
-
     private ParkRepository parkRepository;
 
 
@@ -23,12 +22,18 @@ public class ParkService {
 
 
     /**
-     * This is a GET request that returns a list of all available theme parks
+     * This is a GET request that checks to see if the list of theme parks is empty before either throwing a ResourceNotFoundException, or returning the list of all available theme parks
      *
      * @return a list of all available theme parks
      */
     public List<Park> getAllParks() {
-        return parkRepository.findAll();
+        List<Park> parkList = parkRepository.findAll();
+
+        if (parkList.isEmpty()) {
+            throw new ResourceNotFoundException("Error retrieving theme parks from the database. No theme parks found.");
+        } else {
+            return parkList;
+        }
     }
 
 
@@ -44,7 +49,7 @@ public class ParkService {
         if (parkOptional.isPresent()) {
             return parkOptional;
         } else {
-            throw new ResourceNotFoundException("Park with id " + parkId + " not found");
+            throw new ResourceNotFoundException("Error retrieving theme park with id " + parkId + " from the database. Park with id " + parkId + " not found");
         }
     }
 
