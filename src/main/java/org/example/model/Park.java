@@ -120,9 +120,9 @@ public class Park {
 
 
     /**
-     * This method adds attractions to the park's list of attractions
+     * This method adds attractions to the theme park's list of attractions
      *
-     * @param attraction represents the attraction the user is trying to add to the park's list of attractions
+     * @param attraction represents the attraction the user is trying to add to the theme park's list of attractions
      */
     public void addToAttractionList(Attraction attraction) {
         attractionList.add(attraction);
