@@ -44,7 +44,7 @@ public class ParkController {
             message.put("message", "success");
             message.put("data", parkList);
             return new ResponseEntity<>(message, HttpStatus.OK);
-        } catch(ResourceNotFoundException) {
+        } catch(ResourceNotFoundException resourceNotFoundException) {
             message.put("message", "List of parks not found.");
             return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
         }
@@ -54,7 +54,7 @@ public class ParkController {
     /**
      * Retrieves a theme park by its ID.
      *
-     * This method handles GET requests to fetch a theme park identified by its ID from the ParkService.
+     * This method handles GET requests to fetch a specific theme park identified by its ID from the ParkService.
      * If the park is found, it returns a ResponseEntity with a success message and the park details.
      * If the park is not found or an error occurs during retrieval, it returns a ResponseEntity
      * with an error message and an appropriate HTTP status code.
@@ -69,8 +69,8 @@ public class ParkController {
             message.put("message", "success");
             message.put("data", parkOptional);
             return new ResponseEntity<>(message, HttpStatus.OK);
-        } catch(ResourceNotFoundException) {
-            message.put("message", "Park with id " + parkId + " not found");
+        } catch(ResourceNotFoundException resourceNotFoundException) {
+            message.put("message", "Theme park with id " + parkId + " not found");
             return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
         }
     }
