@@ -18,7 +18,6 @@ import java.util.Optional;
 @RequestMapping("/api") // http://localhost:8080/api/
 public class ParkAccessibilityController {
     private ParkAccessibilityService parkAccessibilityService;
-
     static HashMap<String, Object> message = new HashMap<>();
 
 

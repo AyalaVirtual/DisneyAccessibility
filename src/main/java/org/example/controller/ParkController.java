@@ -19,7 +19,6 @@ import java.util.Optional;
 @RequestMapping("/api") // http://localhost:8080/api/
 public class ParkController {
     private ParkService parkService;
-
     static HashMap<String, Object> message = new HashMap<>();
 
 
@@ -32,7 +31,7 @@ public class ParkController {
     /**
      * This method handles GET requests to fetch a list of theme parks from the ParkService.
      * If the parks are found, it returns a ResponseEntity with a success message and the list of theme parks.
-     * If no parks are found or an error occurs during retrieval, it returns a ResponseEntity
+     * If no theme parks are found or an error occurs during retrieval, it returns a ResponseEntity
      *  with an error message and an appropriate HTTP status code.
      *
      * @return ResponseEntity<?> A ResponseEntity containing either a success message and list of theme parks (HTTP 200 OK), or an error message (HTTP 404 NOT FOUND).
@@ -45,7 +44,7 @@ public class ParkController {
             message.put("data", parkList);
             return new ResponseEntity<>(message, HttpStatus.OK);
         } catch(ResourceNotFoundException resourceNotFoundException) {
-            message.put("message", "List of parks not found.");
+            message.put("message", "List of theme parks not found.");
             return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
         }
     }
@@ -60,7 +59,7 @@ public class ParkController {
      * with an error message and an appropriate HTTP status code.
      *
      * @param parkId The ID of the theme park to retrieve.
-     * @return ResponseEntity<?> A ResponseEntity containing either a success message and park details (HTTP 200 OK), or an error message (HTTP 404 NOT FOUND).
+     * @return ResponseEntity<?> A ResponseEntity containing either a success message and the theme park's details (HTTP 200 OK), or an error message (HTTP 404 NOT FOUND).
      */
     @GetMapping(path = "/parks/{parkId}/")
     public ResponseEntity<?> getParkById(@PathVariable(value = "parkId") Long parkId) {

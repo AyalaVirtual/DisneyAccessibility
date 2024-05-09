@@ -7,6 +7,6 @@ import java.util.Optional;
 
 public interface AttractionAccessibilityRepository extends JpaRepository<AttractionAccessibility, Long> {
     // This finds an attraction's accessibility details by id
-    Optional<AttractionAccessibility> findById(Long attractionAccessibilityId);
+    Optional<AttractionAccessibility> findById(Long attractionId, Long attractionAccessibilityId);
 
 }

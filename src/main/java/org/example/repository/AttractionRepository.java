@@ -10,7 +10,7 @@ import java.util.Optional;
 @Repository
 public interface AttractionRepository extends JpaRepository<Attraction, Long> {
     // This method finds an attraction by its id
-    Optional<Attraction> findById(Long attractionId);
+    Optional<Attraction> findById(Long parkId, Long attractionId);
     // This method finds an attraction by its name
     Optional<Attraction> findByName(String attractionName);
 }

@@ -7,7 +7,6 @@ import org.example.repository.ParkAccessibilityRepository;
 import org.example.repository.ParkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.Optional;
 
 
