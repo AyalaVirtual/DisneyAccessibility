@@ -22,9 +22,10 @@ public class ParkService {
 
 
     /**
-     * This is a GET request that checks to see if the list of theme parks is empty before either throwing a ResourceNotFoundException, or returning the list of all available theme parks
+     * Retrieves a list of all theme parks stored in the database.
      *
-     * @return a list of all available theme parks
+     * @return A list of theme parks if found, or throws ResourceNotFoundException if no theme parks are found.
+     * @throws ResourceNotFoundException if no theme parks are found in the database.
      */
     public List<Park> getAllParks() {
         List<Park> parkList = parkRepository.findAll();
@@ -38,10 +39,11 @@ public class ParkService {
 
 
     /**
-     * This is a GET request that checks to see if an individual theme park exists before either returning it, or throwing a ResourceNotFoundException
+     * Retrieves a theme park from the database based on the provided parkId.
      *
-     * @param parkId represents the id of the specific theme park the user is trying to get
-     * @return a theme park by its id if it exists
+     * @param parkId The unique identifier of the theme park to retrieve.
+     * @return An Optional containing the theme park if found, or empty if not found.
+     * @throws ResourceNotFoundException if the theme park with the specified parkId is not found in the database.
      */
     public Optional<Park> getParkById(Long parkId) {
         Optional<Park> parkOptional = parkRepository.findById(parkId);
