@@ -28,7 +28,13 @@ public class ParkAccessibilityController {
     }
 
 
-
+    /**
+     * Retrieves the accessibility details for a specific theme park by its ID and accessibility ID.
+     *
+     * @param parkId The ID of the theme park.
+     * @param parkAccessibilityId The ID of the accessibility details to retrieve.
+     * @return ResponseEntity with the accessibility details and a success message if found (HTTP 200), or an error message and HTTP 404 if not found.
+     */
     @GetMapping(path = "/parks/{parkId}/parkaccessibility/{parkAccessibilityId}/")
     public ResponseEntity<?> getParkAccessibilityById(@PathVariable(value = "parkId") Long parkId, @PathVariable(value = "parkAccessibilityId") Long parkAccessibilityId) {
 
