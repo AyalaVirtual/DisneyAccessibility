@@ -1,6 +1,9 @@
 package org.example.model.attractionaccessibilityattributes;
 
+import jakarta.persistence.Embeddable;
 
+
+@Embeddable
 public class MustTransfer {
     private boolean mayRemainInWheelChairEcv;
     private boolean mustBeAmbulatory;

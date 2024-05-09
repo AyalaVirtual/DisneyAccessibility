@@ -35,7 +35,6 @@ public class ParkAccessibilityService {
         Optional<ParkAccessibility> parkAccessibilityOptional = parkAccessibilityRepository.findById(parkAccessibilityId);
 
         if (parkAccessibilityOptional.isPresent() && parkOptional.get().getParkAccessibility().getId().equals(parkAccessibilityId)) {
-            System.out.println("This works");
             return parkAccessibilityOptional;
         } else {
             throw new ResourceNotFoundException("Error retrieving accessibility details for theme park with id " + parkId + " from the database. No accessibility details found.");
