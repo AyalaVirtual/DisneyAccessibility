@@ -22,8 +22,9 @@ public class AttractionService {
 
 
     /**
-     * Retrieves a list of attractions.
+     * Retrieves a list of attractions from an associated theme park.
      *
+     * @param parkId The ID of the theme park for which attractions are to be retrieved.
      * @return A list of attractions.
      * @throws ResourceNotFoundException if no attractions are found.
      */
@@ -39,7 +40,7 @@ public class AttractionService {
 
 
     /**
-     * Retrieves an attraction from the database based on the provided parkId and attractionId.
+     * Retrieves a specific attraction from the database based on the provided parkId and attractionId.
      *
      * @param parkId The ID of the theme park for which attractions are to be retrieved.
      * @param attractionId The unique identifier of the attraction to retrieve.

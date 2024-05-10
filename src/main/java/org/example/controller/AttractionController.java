@@ -29,10 +29,11 @@ public class AttractionController {
 
 
     /**
-     * This method handles GET requests to fetch a list of attractions from the AttractionService.
+     * This method handles GET requests to fetch a specific theme park's list of attractions from the AttractionService.
      * If the attractions are found, it returns a ResponseEntity with a success message and the list of attractions.
      * If the attractions are not found, or an error occurs during retrieval, it returns a ResponseEntity with an error message and an appropriate HTTP status code.
      *
+     * @param parkId The ID of the theme park for which attractions are to be retrieved.
      * @return ResponseEntity<?> A ResponseEntity containing either a success message and list of attractions (HTTP 200 OK), or an error message (HTTP 404 NOT FOUND).
      */
     @GetMapping(path = "/parks/{parkId}/attractions/")
