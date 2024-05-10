@@ -21,14 +21,15 @@ public class ParkAccessibilityService {
 
 
     /**
-     * Retrieves a theme park's accessibility details by ID.
+     * Retrieves the accessibility details for a specific theme park by its park ID and accessibility ID.
      *
-     * @param parkAccessibilityId The ID of the theme park's accessibility details to retrieve.
+     * @param parkId The ID of the theme park whose accessibility details the user is trying to retrieve.
+     * @param parkAccessibilityId The ID of the relevant accessibility details to retrieve.
      * @return An Optional containing the theme park's accessibility details if found, else an empty Optional.
      * @throws ResourceNotFoundException if the theme park's accessibility details are not found.
      */
-    public Optional<ParkAccessibility> getParkAccessibilityById(Long parkAccessibilityId) {
-        Optional<ParkAccessibility> parkAccessibilityOptional = parkAccessibilityRepository.findById(parkAccessibilityId);
+    public Optional<ParkAccessibility> getParkAccessibilityByParkIdAndId(Long parkId, Long parkAccessibilityId) {
+        Optional<ParkAccessibility> parkAccessibilityOptional = parkAccessibilityRepository.findByParkIdAndId(parkId, parkAccessibilityId);
 
         if (parkAccessibilityOptional.isPresent()) {
             return parkAccessibilityOptional;

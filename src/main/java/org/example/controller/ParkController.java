@@ -45,7 +45,7 @@ public class ParkController {
             return new ResponseEntity<>(message, HttpStatus.OK);
         } catch(ResourceNotFoundException resourceNotFoundException) {
             message.put("message", "List of theme parks not found.");
-            return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(message.get("message"), HttpStatus.NOT_FOUND);
         }
     }
 
@@ -70,7 +70,7 @@ public class ParkController {
             return new ResponseEntity<>(message, HttpStatus.OK);
         } catch(ResourceNotFoundException resourceNotFoundException) {
             message.put("message", "Theme park with id " + parkId + " not found");
-            return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(message.get("message"), HttpStatus.NOT_FOUND);
         }
     }
 
