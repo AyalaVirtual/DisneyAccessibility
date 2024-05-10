@@ -34,6 +34,10 @@ public class Attraction {
     @JoinColumn(name = "park_id") // This means that the Attraction entity will have a foreign key column named park_id referring to the primary attribute id of our Park entity. This foreign key in SQL joins the columns to connect the 2 tables
     private Park park;
 
+    // This links the table representing the Attraction model to the table representing the AttractionAccessibility model
+    @OneToOne(mappedBy = "attraction", cascade = CascadeType.ALL) // This means there is a one-to-one relationship between Attraction and AttractionAccessibility that is mapped by the 'attraction' variable in the AttractionAccessibility class. 'cascade = CascadeType.ALL' ensures that when you perform operations (like save or delete) on an Attraction, its associated AttractionAccessibility will also be saved or deleted
+    private AttractionAccessibility attractionAccessibility;
+
 
     public Attraction() {
     }
@@ -103,6 +107,14 @@ public class Attraction {
 
     public void setPark(Park park) {
         this.park = park;
+    }
+
+    public AttractionAccessibility getAttractionAccessibility() {
+        return attractionAccessibility;
+    }
+
+    public void setAttractionAccessibility(AttractionAccessibility attractionAccessibility) {
+        this.attractionAccessibility = attractionAccessibility;
     }
 
 

@@ -12,6 +12,9 @@ public class MustTransfer {
     private boolean mustTransferToWheelchairThenToRide;
 
 
+    public MustTransfer() {
+    }
+
     public MustTransfer(boolean mayRemainInWheelChairEcv, boolean mustBeAmbulatory, boolean mustTransferFromWheelchairEcv, boolean mustTransferToWheelchair, boolean mustTransferToWheelchairThenToRide) {
         this.mayRemainInWheelChairEcv = mayRemainInWheelChairEcv;
         this.mustBeAmbulatory = mustBeAmbulatory;

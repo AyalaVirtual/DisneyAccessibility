@@ -10,6 +10,4 @@ import java.util.Optional;
 public interface ParkRepository extends JpaRepository<Park, Long> {
     // This method finds a theme park by its id
     Optional<Park> findById(Long parkId);
-    // This method finds a theme park by its name
-    Optional<Park> findByName(String parkName);
 }

@@ -1,6 +1,7 @@
 package org.example.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonAppend;
 import jakarta.persistence.*;
 import org.example.model.attractionaccessibilityattributes.MustTransfer;
 import org.example.model.attractionaccessibilityattributes.SensoryExperience;
@@ -15,7 +16,14 @@ public class AttractionAccessibility {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "mayRemainInWheelchairEcv", column = @Column(name = "may_remain_in_wheelchair_ecv")),
+            @AttributeOverride(name = "mustBeAmbulatory", column = @Column(name = "must_be_ambulatory")),
+            @AttributeOverride(name = "mustTransferFromWheelchairEcv", column = @Column(name = "must_transfer_from_wheelchair_ecv")),
+            @AttributeOverride(name = "mustTransferToWheelchair", column = @Column(name = "must_transfer_to_wheelchair")),
+            @AttributeOverride(name = "mustTransferToWheelchairThenToRide", column = @Column(name = "must_transfer_to_wheelchair_then_to_ride"))
+    })
     private MustTransfer mustTransfer;
 
     @Column
@@ -51,7 +59,20 @@ public class AttractionAccessibility {
     @Column
     private boolean videoCaptioning;
 
-    @Column
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "scentSmell", column = @Column(name = "scent_smell")),
+            @AttributeOverride(name = "lightingEffects", column = @Column(name = "lighting_effects")),
+            @AttributeOverride(name = "loudNoises", column = @Column(name = "loud_noises")),
+            @AttributeOverride(name = "periodsOfDarkness", column = @Column(name = "periods_of_darkness")),
+            @AttributeOverride(name = "bumpy", column = @Column(name = "bumpy")),
+            @AttributeOverride(name = "fast", column = @Column(name = "fast")),
+            @AttributeOverride(name = "liftsOffGround", column = @Column(name = "lifts_off_ground")),
+            @AttributeOverride(name = "wet", column = @Column(name = "wet")),
+            @AttributeOverride(name = "elementOfSurprise", column = @Column(name = "element_of_surprise")),
+            @AttributeOverride(name = "typeOfRestraint", column = @Column(name = "type_of_restraint")),
+            @AttributeOverride(name = "tripTime", column = @Column(name = "trip_time"))
+    })
     private SensoryExperience sensoryExperience;
 
     // This links the table representing the AttractionAccessibility model to the table representing the Attraction model

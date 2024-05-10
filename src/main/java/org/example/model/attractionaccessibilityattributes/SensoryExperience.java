@@ -18,6 +18,9 @@ public class SensoryExperience {
     private String tripTime;
 
 
+    public SensoryExperience() {
+    }
+
     public SensoryExperience(boolean scentSmell, boolean lightingEffects, boolean loudNoises, boolean periodsOfDarkness, boolean bumpy, boolean fast, boolean liftsOffGround, boolean wet, String elementOfSurprise, String typeOfRestraint, String tripTime) {
         this.scentSmell = scentSmell;
         this.lightingEffects = lightingEffects;
