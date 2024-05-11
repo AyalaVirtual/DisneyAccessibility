@@ -36,7 +36,7 @@ public class SensoryExperience {
     }
 
 
-    public boolean hasScentSmell() {
+    public boolean getScentSmell() {
         return scentSmell;
     }
 
@@ -44,7 +44,7 @@ public class SensoryExperience {
         this.scentSmell = scentSmell;
     }
 
-    public boolean hasLightingEffects() {
+    public boolean getLightingEffects() {
         return lightingEffects;
     }
 
@@ -52,7 +52,7 @@ public class SensoryExperience {
         this.lightingEffects = lightingEffects;
     }
 
-    public boolean hasLoudNoises() {
+    public boolean getLoudNoises() {
         return loudNoises;
     }
 
@@ -60,7 +60,7 @@ public class SensoryExperience {
         this.loudNoises = loudNoises;
     }
 
-    public boolean hasPeriodsOfDarkness() {
+    public boolean getPeriodsOfDarkness() {
         return periodsOfDarkness;
     }
 

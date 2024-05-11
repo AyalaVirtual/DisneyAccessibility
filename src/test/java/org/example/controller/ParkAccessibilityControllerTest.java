@@ -70,7 +70,6 @@ public class ParkAccessibilityControllerTest {
                 .andExpect(jsonPath("$.data.serviceAnimalReliefAreas").value(hollywoodStudiosA11y.getServiceAnimalReliefAreas()))
                 .andExpect(jsonPath("$.data.companionRestroomLocations").value(hollywoodStudiosA11y.getCompanionRestroomLocations()))
                 .andExpect(jsonPath("$.data.firstAidLocations").value(hollywoodStudiosA11y.getFirstAidLocations()))
-
                 .andExpect(jsonPath("$.message").value("success"))
                 .andDo(print());
     }

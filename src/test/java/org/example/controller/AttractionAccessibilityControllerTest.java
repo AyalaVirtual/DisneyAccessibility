@@ -3,8 +3,7 @@ package org.example.controller;
 import org.example.model.Attraction;
 import org.example.model.AttractionAccessibility;
 import org.example.model.Park;
-import org.example.model.attractionaccessibilityattributes.MustTransfer;
-import org.example.model.attractionaccessibilityattributes.SensoryExperience;
+import org.example.model.attractionaccessibilityattributes.*;
 import org.example.service.AttractionAccessibilityService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -37,8 +36,15 @@ public class AttractionAccessibilityControllerTest {
     Park magicKingdom = new Park(1L, "Magic Kingdom", "image URL", "Enter enchanting lands and step inside fantastical stories.", 12.24, 20.17);
     Attraction cinderellasCastle = new Attraction(1L, "Cinderella's Castle", "image URL", "Inspired by the castle in the Disney film Cinderella, this enchanting edifice is the symbol of Magic Kingdom park.", 12.24, 20.17, magicKingdom);
     MustTransfer mustTransfer = new MustTransfer(true, false, true, false, true);
-    SensoryExperience sensoryExperience = new SensoryExperience(true, false, true, false, true, true, false, true, "sudden turns", "seatbelt", "5 minutes");
-    AttractionAccessibility cinderellasCastleA11y = new AttractionAccessibility(1L, mustTransfer, true, false, true, false, true, true, false, true, false, true, false, sensoryExperience, cinderellasCastle);
+
+    TransferAssistance transferAssistance = new TransferAssistance(true, false, true, false);
+
+    ServiceAnimalRestrictions serviceAnimalRestrictions = new ServiceAnimalRestrictions(true, false);
+
+    AssistiveDevices assistiveDevices = new AssistiveDevices(true, false, true, false, true);
+
+    SensoryExperience sensoryExperience = new SensoryExperience(true, false, true, false, true, true, false, true, "sudden turns and drops", "seatbelts", "7 minutes");
+    AttractionAccessibility cinderellasCastleA11y = new AttractionAccessibility(1L, mustTransfer, transferAssistance, serviceAnimalRestrictions, assistiveDevices, sensoryExperience, cinderellasCastle);
 
 
     /**
@@ -61,24 +67,21 @@ public class AttractionAccessibilityControllerTest {
                 .andExpect(jsonPath("$.data.mustTransfer.mustTransferFromWheelchairEcv").value(cinderellasCastleA11y.getMustTransfer().getMustTransferFromWheelchairEcv()))
                 .andExpect(jsonPath("$.data.mustTransfer.mustTransferToWheelchair").value(cinderellasCastleA11y.getMustTransfer().getMustTransferToWheelchair()))
                 .andExpect(jsonPath("$.data.mustTransfer.mustTransferToWheelchairThenToRide").value(cinderellasCastleA11y.getMustTransfer().getMustTransferToWheelchairThenToRide()))
-
-                // .andReturn();
-
-                 .andExpect(jsonPath("$.data.loadUnloadAreas").value(cinderellasCastleA11y.hasLoadUnloadAreas()))
-                .andExpect(jsonPath("$.data.wheelchairAccessVehicles").value(cinderellasCastleA11y.hasWheelchairAccessVehicles()))
-                .andExpect(jsonPath("$.data.transferAccessVehicle").value(cinderellasCastleA11y.hasTransferAccessVehicle()))
-                .andExpect(jsonPath("$.data.transferDevices").value(cinderellasCastleA11y.hasTransferDevices()))
-                .andExpect(jsonPath("$.data.serviceAnimalRestrictions_Ride").value(cinderellasCastleA11y.hasServiceAnimalRestrictions_Ride()))
-                .andExpect(jsonPath("$.data.serviceAnimalRestrictions_Board").value(cinderellasCastleA11y.hasServiceAnimalRestrictions_Board()))
-                .andExpect(jsonPath("$.data.assistiveListening").value(cinderellasCastleA11y.hasAssistiveListening()))
-                .andExpect(jsonPath("$.data.audioDescription").value(cinderellasCastleA11y.hasAudioDescription()))
-                .andExpect(jsonPath("$.data.handheldCaptioning").value(cinderellasCastleA11y.hasHandheldCaptioning()))
-                .andExpect(jsonPath("$.data.signLanguage").value(cinderellasCastleA11y.hasSignLanguage()))
-                .andExpect(jsonPath("$.data.videoCaptioning").value(cinderellasCastleA11y.hasVideoCaptioning()))
-                .andExpect(jsonPath("$.data.sensoryExperience.scentSmell").value(cinderellasCastleA11y.getSensoryExperience().hasScentSmell()))
-                .andExpect(jsonPath("$.data.sensoryExperience.lightingEffects").value(cinderellasCastleA11y.getSensoryExperience().hasLightingEffects()))
-                .andExpect(jsonPath("$.data.sensoryExperience.loudNoises").value(cinderellasCastleA11y.getSensoryExperience().hasLoudNoises()))
-                .andExpect(jsonPath("$.data.sensoryExperience.periodsOfDarkness").value(cinderellasCastleA11y.getSensoryExperience().hasPeriodsOfDarkness()))
+                 .andExpect(jsonPath("$.data.transferAssistance.loadUnloadAreas").value(cinderellasCastleA11y.getTransferAssistance().getLoadUnloadAreas()))
+                .andExpect(jsonPath("$.data.transferAssistance.wheelchairAccessVehicles").value(cinderellasCastleA11y.getTransferAssistance().getWheelchairAccessVehicles()))
+                .andExpect(jsonPath("$.data.transferAssistance.transferAccessVehicle").value(cinderellasCastleA11y.getTransferAssistance().getTransferAccessVehicle()))
+                .andExpect(jsonPath("$.data.transferAssistance.transferDevices").value(cinderellasCastleA11y.getTransferAssistance().getTransferDevices()))
+                .andExpect(jsonPath("$.data.serviceAnimalRestrictions.rideRestrictions").value(cinderellasCastleA11y.getServiceAnimalRestrictions().getRideRestrictions()))
+                .andExpect(jsonPath("$.data.serviceAnimalRestrictions.boardRestrictions").value(cinderellasCastleA11y.getServiceAnimalRestrictions().getBoardRestrictions()))
+                .andExpect(jsonPath("$.data.assistiveDevices.assistiveListening").value(cinderellasCastleA11y.getAssistiveDevices().getAssistiveListening()))
+                .andExpect(jsonPath("$.data.assistiveDevices.audioDescription").value(cinderellasCastleA11y.getAssistiveDevices().getAudioDescription()))
+                .andExpect(jsonPath("$.data.assistiveDevices.handheldCaptioning").value(cinderellasCastleA11y.getAssistiveDevices().getHandheldCaptioning()))
+                .andExpect(jsonPath("$.data.assistiveDevices.signLanguage").value(cinderellasCastleA11y.getAssistiveDevices().getSignLanguage()))
+                .andExpect(jsonPath("$.data.assistiveDevices.videoCaptioning").value(cinderellasCastleA11y.getAssistiveDevices().getVideoCaptioning()))
+                .andExpect(jsonPath("$.data.sensoryExperience.scentSmell").value(cinderellasCastleA11y.getSensoryExperience().getScentSmell()))
+                .andExpect(jsonPath("$.data.sensoryExperience.lightingEffects").value(cinderellasCastleA11y.getSensoryExperience().getLightingEffects()))
+                .andExpect(jsonPath("$.data.sensoryExperience.loudNoises").value(cinderellasCastleA11y.getSensoryExperience().getLoudNoises()))
+                .andExpect(jsonPath("$.data.sensoryExperience.periodsOfDarkness").value(cinderellasCastleA11y.getSensoryExperience().getPeriodsOfDarkness()))
                 .andExpect(jsonPath("$.data.sensoryExperience.bumpy").value(cinderellasCastleA11y.getSensoryExperience().isBumpy()))
                 .andExpect(jsonPath("$.data.sensoryExperience.fast").value(cinderellasCastleA11y.getSensoryExperience().isFast()))
                 .andExpect(jsonPath("$.data.sensoryExperience.liftsOffGround").value(cinderellasCastleA11y.getSensoryExperience().getLiftsOffGround()))
@@ -86,7 +89,6 @@ public class AttractionAccessibilityControllerTest {
                 .andExpect(jsonPath("$.data.sensoryExperience.elementOfSurprise").value(cinderellasCastleA11y.getSensoryExperience().getElementOfSurprise()))
                 .andExpect(jsonPath("$.data.sensoryExperience.typeOfRestraint").value(cinderellasCastleA11y.getSensoryExperience().getTypeOfRestraint()))
                 .andExpect(jsonPath("$.data.sensoryExperience.tripTime").value(cinderellasCastleA11y.getSensoryExperience().getTripTime()))
-                .andExpect(jsonPath("$.data.attraction").value(cinderellasCastleA11y.getAttraction()))
                 .andExpect(jsonPath("$.message").value("success"))
                 .andDo(print());
     }

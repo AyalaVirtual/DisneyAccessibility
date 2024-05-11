@@ -1,10 +1,8 @@
 package org.example.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.annotation.JsonAppend;
 import jakarta.persistence.*;
-import org.example.model.attractionaccessibilityattributes.MustTransfer;
-import org.example.model.attractionaccessibilityattributes.SensoryExperience;
+import org.example.model.attractionaccessibilityattributes.*;
 
 
 @Entity
@@ -26,38 +24,32 @@ public class AttractionAccessibility {
     })
     private MustTransfer mustTransfer;
 
-    @Column
-    private boolean loadUnloadAreas;
 
-    @Column
-    private boolean wheelchairAccessVehicles;
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "loadUnloadAreas", column = @Column(name = "load-unload-areas")),
+            @AttributeOverride(name = "wheelchairAccessVehicles", column = @Column(name = "wheelchair-access-vehicles")),
+            @AttributeOverride(name = "transferAccessVehicle", column = @Column(name = "transfer-access-vehicle")),
+            @AttributeOverride(name = "transferDevices", column = @Column(name = "transfer-devices"))
+    })
+    private TransferAssistance transferAssistance;
 
-    @Column
-    private boolean transferAccessVehicle;
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "rideRestrictions", column = @Column(name = "ride-restrictions")),
+            @AttributeOverride(name = "boardRestrictions", column = @Column(name = "board-restrictions"))
+    })
+    private ServiceAnimalRestrictions serviceAnimalRestrictions;
 
-    @Column
-    private boolean transferDevices;
-
-    @Column
-    private boolean serviceAnimalRestrictions_Ride;
-
-    @Column
-    private boolean serviceAnimalRestrictions_Board;
-
-    @Column
-    private boolean assistiveListening;
-
-    @Column
-    private boolean audioDescription;
-
-    @Column
-    private boolean handheldCaptioning;
-
-    @Column
-    private boolean signLanguage;
-
-    @Column
-    private boolean videoCaptioning;
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "assistiveListening", column = @Column(name = "assistive-listening")),
+            @AttributeOverride(name = "audioDescription", column = @Column(name = "audio-description")),
+            @AttributeOverride(name = "handheldCaptioning", column = @Column(name = "handheld-captioning")),
+            @AttributeOverride(name = "signLanguage", column = @Column(name = "sign-language")),
+            @AttributeOverride(name = "videoCaptioning", column = @Column(name = "video-captioning"))
+    })
+    private AssistiveDevices assistiveDevices;
 
     @Embedded
     @AttributeOverrides({
@@ -85,24 +77,16 @@ public class AttractionAccessibility {
     public AttractionAccessibility() {
     }
 
-    public AttractionAccessibility(Long id, MustTransfer mustTransfer, boolean loadUnloadAreas, boolean wheelchairAccessVehicles, boolean transferAccessVehicle, boolean transferDevices, boolean serviceAnimalRestrictions_Ride, boolean serviceAnimalRestrictions_Board, boolean assistiveListening, boolean audioDescription, boolean handheldCaptioning, boolean signLanguage, boolean videoCaptioning, SensoryExperience sensoryExperience, Attraction attraction) {
+
+    public AttractionAccessibility(Long id, MustTransfer mustTransfer, TransferAssistance transferAssistance, ServiceAnimalRestrictions serviceAnimalRestrictions, AssistiveDevices assistiveDevices, SensoryExperience sensoryExperience, Attraction attraction) {
         this.id = id;
         this.mustTransfer = mustTransfer;
-        this.loadUnloadAreas = loadUnloadAreas;
-        this.wheelchairAccessVehicles = wheelchairAccessVehicles;
-        this.transferAccessVehicle = transferAccessVehicle;
-        this.transferDevices = transferDevices;
-        this.serviceAnimalRestrictions_Ride = serviceAnimalRestrictions_Ride;
-        this.serviceAnimalRestrictions_Board = serviceAnimalRestrictions_Board;
-        this.assistiveListening = assistiveListening;
-        this.audioDescription = audioDescription;
-        this.handheldCaptioning = handheldCaptioning;
-        this.signLanguage = signLanguage;
-        this.videoCaptioning = videoCaptioning;
+        this.transferAssistance = transferAssistance;
+        this.serviceAnimalRestrictions = serviceAnimalRestrictions;
+        this.assistiveDevices = assistiveDevices;
         this.sensoryExperience = sensoryExperience;
         this.attraction = attraction;
     }
-
 
     public Long getId() {
         return id;
@@ -120,92 +104,28 @@ public class AttractionAccessibility {
         this.mustTransfer = mustTransfer;
     }
 
-    public boolean hasLoadUnloadAreas() {
-        return loadUnloadAreas;
+    public TransferAssistance getTransferAssistance() {
+        return transferAssistance;
     }
 
-    public void setLoadUnloadAreas(boolean loadUnloadAreas) {
-        this.loadUnloadAreas = loadUnloadAreas;
+    public void setTransferAssistance(TransferAssistance transferAssistance) {
+        this.transferAssistance = transferAssistance;
     }
 
-    public boolean hasWheelchairAccessVehicles() {
-        return wheelchairAccessVehicles;
+    public ServiceAnimalRestrictions getServiceAnimalRestrictions() {
+        return serviceAnimalRestrictions;
     }
 
-    public void setWheelchairAccessVehicles(boolean wheelchairAccessVehicles) {
-        this.wheelchairAccessVehicles = wheelchairAccessVehicles;
+    public void setServiceAnimalRestrictions(ServiceAnimalRestrictions serviceAnimalRestrictions) {
+        this.serviceAnimalRestrictions = serviceAnimalRestrictions;
     }
 
-    public boolean hasTransferAccessVehicle() {
-        return transferAccessVehicle;
+    public AssistiveDevices getAssistiveDevices() {
+        return assistiveDevices;
     }
 
-    public void setTransferAccessVehicle(boolean transferAccessVehicle) {
-        this.transferAccessVehicle = transferAccessVehicle;
-    }
-
-    public boolean hasTransferDevices() {
-        return transferDevices;
-    }
-
-    public void setTransferDevices(boolean transferDevices) {
-        this.transferDevices = transferDevices;
-    }
-
-    public boolean hasServiceAnimalRestrictions_Ride() {
-        return serviceAnimalRestrictions_Ride;
-    }
-
-    public void setServiceAnimalRestrictions_Ride(boolean serviceAnimalRestrictions_Ride) {
-        this.serviceAnimalRestrictions_Ride = serviceAnimalRestrictions_Ride;
-    }
-
-    public boolean hasServiceAnimalRestrictions_Board() {
-        return serviceAnimalRestrictions_Board;
-    }
-
-    public void setServiceAnimalRestrictions_Board(boolean serviceAnimalRestrictions_Board) {
-        this.serviceAnimalRestrictions_Board = serviceAnimalRestrictions_Board;
-    }
-
-    public boolean hasAssistiveListening() {
-        return assistiveListening;
-    }
-
-    public void setAssistiveListening(boolean assistiveListening) {
-        this.assistiveListening = assistiveListening;
-    }
-
-    public boolean hasAudioDescription() {
-        return audioDescription;
-    }
-
-    public void setAudioDescription(boolean audioDescription) {
-        this.audioDescription = audioDescription;
-    }
-
-    public boolean hasHandheldCaptioning() {
-        return handheldCaptioning;
-    }
-
-    public void setHandheldCaptioning(boolean handheldCaptioning) {
-        this.handheldCaptioning = handheldCaptioning;
-    }
-
-    public boolean hasSignLanguage() {
-        return signLanguage;
-    }
-
-    public void setSignLanguage(boolean signLanguage) {
-        this.signLanguage = signLanguage;
-    }
-
-    public boolean hasVideoCaptioning() {
-        return videoCaptioning;
-    }
-
-    public void setVideoCaptioning(boolean videoCaptioning) {
-        this.videoCaptioning = videoCaptioning;
+    public void setAssistiveDevices(AssistiveDevices assistiveDevices) {
+        this.assistiveDevices = assistiveDevices;
     }
 
     public SensoryExperience getSensoryExperience() {
@@ -230,17 +150,9 @@ public class AttractionAccessibility {
         return "AttractionAccessibility{" +
                 "id=" + id +
                 ", mustTransfer=" + mustTransfer +
-                ", loadUnloadAreas=" + loadUnloadAreas +
-                ", wheelchairAccessVehicles=" + wheelchairAccessVehicles +
-                ", transferAccessVehicle=" + transferAccessVehicle +
-                ", transferDevices=" + transferDevices +
-                ", serviceAnimalRestrictions_Ride=" + serviceAnimalRestrictions_Ride +
-                ", serviceAnimalRestrictions_Board=" + serviceAnimalRestrictions_Board +
-                ", assistiveListening=" + assistiveListening +
-                ", audioDescription=" + audioDescription +
-                ", handheldCaptioning=" + handheldCaptioning +
-                ", signLanguage=" + signLanguage +
-                ", videoCaptioning=" + videoCaptioning +
+                ", transferAssistance=" + transferAssistance +
+                ", serviceAnimalRestrictions=" + serviceAnimalRestrictions +
+                ", assistiveDevices=" + assistiveDevices +
                 ", sensoryExperience=" + sensoryExperience +
                 ", attraction=" + attraction +
                 '}';

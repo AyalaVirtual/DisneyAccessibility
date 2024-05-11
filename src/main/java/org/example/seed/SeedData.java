@@ -4,8 +4,7 @@ import org.example.model.Attraction;
 import org.example.model.AttractionAccessibility;
 import org.example.model.Park;
 import org.example.model.ParkAccessibility;
-import org.example.model.attractionaccessibilityattributes.MustTransfer;
-import org.example.model.attractionaccessibilityattributes.SensoryExperience;
+import org.example.model.attractionaccessibilityattributes.*;
 import org.example.repository.AttractionAccessibilityRepository;
 import org.example.repository.AttractionRepository;
 import org.example.repository.ParkAccessibilityRepository;
@@ -41,26 +40,15 @@ public class SeedData implements CommandLineRunner {
 
         String image = "some image URL";
 
-        MustTransfer mustTransfer = new MustTransfer();
-        mustTransfer.setMustBeAmbulatory(false);
-        mustTransfer.setMustTransferToWheelchair(false);
-        mustTransfer.setMustTransferFromWheelchairEcv(true);
-        mustTransfer.setMayRemainInWheelchairEcv(false);
-        mustTransfer.setMustTransferToWheelchairThenToRide(false);
+        MustTransfer mustTransfer = new MustTransfer(true, false, true, false, true);
 
+        TransferAssistance transferAssistance = new TransferAssistance(true, false, true, false);
 
-        SensoryExperience sensoryExperience = new SensoryExperience();
-        sensoryExperience.setScentSmell(false);
-        sensoryExperience.setLightingEffects(true);
-        sensoryExperience.setLoudNoises(true);
-        sensoryExperience.setPeriodsOfDarkness(false);
-        sensoryExperience.setBumpy(false);
-        sensoryExperience.setFast(false);
-        sensoryExperience.setLiftsOffGround(false);
-        sensoryExperience.setWet(false);
-        sensoryExperience.setElementOfSurprise("sudden turns and drops");
-        sensoryExperience.setTypeOfRestraint("seatbelt");
-        sensoryExperience.setTripTime("7 minutes");
+        ServiceAnimalRestrictions serviceAnimalRestrictions = new ServiceAnimalRestrictions(true, false);
+
+        AssistiveDevices assistiveDevices = new AssistiveDevices(true, false, true, false, true);
+
+        SensoryExperience sensoryExperience = new SensoryExperience(true, false, true, false, true, true, false, true, "sudden turns and drops", "seatbelts", "7 minutes");
 
 
         Park magicKingdom = new Park();
@@ -98,17 +86,9 @@ public class SeedData implements CommandLineRunner {
 
         AttractionAccessibility cinderellasCastleA11y = new AttractionAccessibility();
         cinderellasCastleA11y.setMustTransfer(mustTransfer);
-        cinderellasCastleA11y.setLoadUnloadAreas(true);
-        cinderellasCastleA11y.setWheelchairAccessVehicles(true);
-        cinderellasCastleA11y.setTransferAccessVehicle(true);
-        cinderellasCastleA11y.setTransferDevices(false);
-        cinderellasCastleA11y.setServiceAnimalRestrictions_Ride(true);
-        cinderellasCastleA11y.setServiceAnimalRestrictions_Board(false);
-        cinderellasCastleA11y.setAssistiveListening(true);
-        cinderellasCastleA11y.setAudioDescription(false);
-        cinderellasCastleA11y.setHandheldCaptioning(true);
-        cinderellasCastleA11y.setSignLanguage(true);
-        cinderellasCastleA11y.setVideoCaptioning(false);
+        cinderellasCastleA11y.setTransferAssistance(transferAssistance);
+        cinderellasCastleA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
+        cinderellasCastleA11y.setAssistiveDevices(assistiveDevices);
         cinderellasCastleA11y.setSensoryExperience(sensoryExperience);
         cinderellasCastleA11y.setAttraction(cinderellasCastle);
         attractionAccessibilityRepository.save(cinderellasCastleA11y);
@@ -125,17 +105,9 @@ public class SeedData implements CommandLineRunner {
 
         AttractionAccessibility meetArielA11y = new AttractionAccessibility();
         meetArielA11y.setMustTransfer(mustTransfer);
-        meetArielA11y.setLoadUnloadAreas(true);
-        meetArielA11y.setWheelchairAccessVehicles(true);
-        meetArielA11y.setTransferAccessVehicle(true);
-        meetArielA11y.setTransferDevices(false);
-        meetArielA11y.setServiceAnimalRestrictions_Ride(true);
-        meetArielA11y.setServiceAnimalRestrictions_Board(false);
-        meetArielA11y.setAssistiveListening(true);
-        meetArielA11y.setAudioDescription(false);
-        meetArielA11y.setHandheldCaptioning(true);
-        meetArielA11y.setSignLanguage(true);
-        meetArielA11y.setVideoCaptioning(false);
+        meetArielA11y.setTransferAssistance(transferAssistance);
+        meetArielA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
+        meetArielA11y.setAssistiveDevices(assistiveDevices);
         meetArielA11y.setSensoryExperience(sensoryExperience);
         meetArielA11y.setAttraction(meetAriel);
         attractionAccessibilityRepository.save(meetArielA11y);
@@ -176,17 +148,9 @@ public class SeedData implements CommandLineRunner {
 
         AttractionAccessibility frozenSingAlongA11y = new AttractionAccessibility();
         frozenSingAlongA11y.setMustTransfer(mustTransfer);
-        frozenSingAlongA11y.setLoadUnloadAreas(false);
-        frozenSingAlongA11y.setWheelchairAccessVehicles(true);
-        frozenSingAlongA11y.setTransferAccessVehicle(true);
-        frozenSingAlongA11y.setTransferDevices(false);
-        frozenSingAlongA11y.setServiceAnimalRestrictions_Ride(true);
-        frozenSingAlongA11y.setServiceAnimalRestrictions_Board(false);
-        frozenSingAlongA11y.setAssistiveListening(true);
-        frozenSingAlongA11y.setAudioDescription(false);
-        frozenSingAlongA11y.setHandheldCaptioning(true);
-        frozenSingAlongA11y.setSignLanguage(true);
-        frozenSingAlongA11y.setVideoCaptioning(false);
+        frozenSingAlongA11y.setTransferAssistance(transferAssistance);
+        frozenSingAlongA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
+        frozenSingAlongA11y.setAssistiveDevices(assistiveDevices);
         frozenSingAlongA11y.setSensoryExperience(sensoryExperience);
         frozenSingAlongA11y.setAttraction(frozenSingAlong);
         attractionAccessibilityRepository.save(frozenSingAlongA11y);
@@ -203,17 +167,9 @@ public class SeedData implements CommandLineRunner {
 
         AttractionAccessibility meetOlafA11y = new AttractionAccessibility();
         meetOlafA11y.setMustTransfer(mustTransfer);
-        meetOlafA11y.setLoadUnloadAreas(true);
-        meetOlafA11y.setWheelchairAccessVehicles(true);
-        meetOlafA11y.setTransferAccessVehicle(true);
-        meetOlafA11y.setTransferDevices(false);
-        meetOlafA11y.setServiceAnimalRestrictions_Ride(true);
-        meetOlafA11y.setServiceAnimalRestrictions_Board(false);
-        meetOlafA11y.setAssistiveListening(true);
-        meetOlafA11y.setAudioDescription(false);
-        meetOlafA11y.setHandheldCaptioning(true);
-        meetOlafA11y.setSignLanguage(true);
-        meetOlafA11y.setVideoCaptioning(false);
+        meetOlafA11y.setTransferAssistance(transferAssistance);
+        meetOlafA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
+        meetOlafA11y.setAssistiveDevices(assistiveDevices);
         meetOlafA11y.setSensoryExperience(sensoryExperience);
         meetOlafA11y.setAttraction(meetOlaf);
         attractionAccessibilityRepository.save(meetOlafA11y);
