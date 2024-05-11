@@ -120,7 +120,7 @@ public class AttractionAccessibility {
         this.mustTransfer = mustTransfer;
     }
 
-    public boolean isLoadUnloadAreas() {
+    public boolean hasLoadUnloadAreas() {
         return loadUnloadAreas;
     }
 
@@ -128,7 +128,7 @@ public class AttractionAccessibility {
         this.loadUnloadAreas = loadUnloadAreas;
     }
 
-    public boolean isWheelchairAccessVehicles() {
+    public boolean hasWheelchairAccessVehicles() {
         return wheelchairAccessVehicles;
     }
 
@@ -136,7 +136,7 @@ public class AttractionAccessibility {
         this.wheelchairAccessVehicles = wheelchairAccessVehicles;
     }
 
-    public boolean isTransferAccessVehicle() {
+    public boolean hasTransferAccessVehicle() {
         return transferAccessVehicle;
     }
 
@@ -144,7 +144,7 @@ public class AttractionAccessibility {
         this.transferAccessVehicle = transferAccessVehicle;
     }
 
-    public boolean isTransferDevices() {
+    public boolean hasTransferDevices() {
         return transferDevices;
     }
 
@@ -152,7 +152,7 @@ public class AttractionAccessibility {
         this.transferDevices = transferDevices;
     }
 
-    public boolean isServiceAnimalRestrictions_Ride() {
+    public boolean hasServiceAnimalRestrictions_Ride() {
         return serviceAnimalRestrictions_Ride;
     }
 
@@ -160,7 +160,7 @@ public class AttractionAccessibility {
         this.serviceAnimalRestrictions_Ride = serviceAnimalRestrictions_Ride;
     }
 
-    public boolean isServiceAnimalRestrictions_Board() {
+    public boolean hasServiceAnimalRestrictions_Board() {
         return serviceAnimalRestrictions_Board;
     }
 
@@ -168,7 +168,7 @@ public class AttractionAccessibility {
         this.serviceAnimalRestrictions_Board = serviceAnimalRestrictions_Board;
     }
 
-    public boolean isAssistiveListening() {
+    public boolean hasAssistiveListening() {
         return assistiveListening;
     }
 
@@ -176,7 +176,7 @@ public class AttractionAccessibility {
         this.assistiveListening = assistiveListening;
     }
 
-    public boolean isAudioDescription() {
+    public boolean hasAudioDescription() {
         return audioDescription;
     }
 
@@ -184,7 +184,7 @@ public class AttractionAccessibility {
         this.audioDescription = audioDescription;
     }
 
-    public boolean isHandheldCaptioning() {
+    public boolean hasHandheldCaptioning() {
         return handheldCaptioning;
     }
 
@@ -192,7 +192,7 @@ public class AttractionAccessibility {
         this.handheldCaptioning = handheldCaptioning;
     }
 
-    public boolean isSignLanguage() {
+    public boolean hasSignLanguage() {
         return signLanguage;
     }
 
@@ -200,7 +200,7 @@ public class AttractionAccessibility {
         this.signLanguage = signLanguage;
     }
 
-    public boolean isVideoCaptioning() {
+    public boolean hasVideoCaptioning() {
         return videoCaptioning;
     }
 

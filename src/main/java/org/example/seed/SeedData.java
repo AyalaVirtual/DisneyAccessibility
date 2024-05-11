@@ -45,7 +45,7 @@ public class SeedData implements CommandLineRunner {
         mustTransfer.setMustBeAmbulatory(false);
         mustTransfer.setMustTransferToWheelchair(false);
         mustTransfer.setMustTransferFromWheelchairEcv(true);
-        mustTransfer.setMayRemainInWheelChairEcv(false);
+        mustTransfer.setMayRemainInWheelchairEcv(false);
         mustTransfer.setMustTransferToWheelchairThenToRide(false);
 
 

@@ -5,7 +5,7 @@ import jakarta.persistence.Embeddable;
 
 @Embeddable
 public class MustTransfer {
-    private boolean mayRemainInWheelChairEcv;
+    private boolean mayRemainInWheelchairEcv;
     private boolean mustBeAmbulatory;
     private boolean mustTransferFromWheelchairEcv;
     private boolean mustTransferToWheelchair;
@@ -15,8 +15,8 @@ public class MustTransfer {
     public MustTransfer() {
     }
 
-    public MustTransfer(boolean mayRemainInWheelChairEcv, boolean mustBeAmbulatory, boolean mustTransferFromWheelchairEcv, boolean mustTransferToWheelchair, boolean mustTransferToWheelchairThenToRide) {
-        this.mayRemainInWheelChairEcv = mayRemainInWheelChairEcv;
+    public MustTransfer(boolean mayRemainInWheelchairEcv, boolean mustBeAmbulatory, boolean mustTransferFromWheelchairEcv, boolean mustTransferToWheelchair, boolean mustTransferToWheelchairThenToRide) {
+        this.mayRemainInWheelchairEcv = mayRemainInWheelchairEcv;
         this.mustBeAmbulatory = mustBeAmbulatory;
         this.mustTransferFromWheelchairEcv = mustTransferFromWheelchairEcv;
         this.mustTransferToWheelchair = mustTransferToWheelchair;
@@ -24,15 +24,15 @@ public class MustTransfer {
     }
 
 
-    public boolean isMayRemainInWheelChairEcv() {
-        return mayRemainInWheelChairEcv;
+    public boolean getMayRemainInWheelchairEcv() {
+        return mayRemainInWheelchairEcv;
     }
 
-    public void setMayRemainInWheelChairEcv(boolean mayRemainInWheelChairEcv) {
-        this.mayRemainInWheelChairEcv = mayRemainInWheelChairEcv;
+    public void setMayRemainInWheelchairEcv(boolean mayRemainInWheelchairEcv) {
+        this.mayRemainInWheelchairEcv = mayRemainInWheelchairEcv;
     }
 
-    public boolean isMustBeAmbulatory() {
+    public boolean getMustBeAmbulatory() {
         return mustBeAmbulatory;
     }
 
@@ -40,7 +40,7 @@ public class MustTransfer {
         this.mustBeAmbulatory = mustBeAmbulatory;
     }
 
-    public boolean isMustTransferFromWheelchairEcv() {
+    public boolean getMustTransferFromWheelchairEcv() {
         return mustTransferFromWheelchairEcv;
     }
 
@@ -48,7 +48,7 @@ public class MustTransfer {
         this.mustTransferFromWheelchairEcv = mustTransferFromWheelchairEcv;
     }
 
-    public boolean isMustTransferToWheelchair() {
+    public boolean getMustTransferToWheelchair() {
         return mustTransferToWheelchair;
     }
 
@@ -56,7 +56,7 @@ public class MustTransfer {
         this.mustTransferToWheelchair = mustTransferToWheelchair;
     }
 
-    public boolean isMustTransferToWheelchairThenToRide() {
+    public boolean getMustTransferToWheelchairThenToRide() {
         return mustTransferToWheelchairThenToRide;
     }
 
@@ -68,7 +68,7 @@ public class MustTransfer {
     @Override
     public String toString() {
         return "MustTransfer{" +
-                "mayRemainInWheelChairEcv=" + mayRemainInWheelChairEcv +
+                "mayRemainInWheelchairEcv=" + mayRemainInWheelchairEcv +
                 ", mustBeAmbulatory=" + mustBeAmbulatory +
                 ", mustTransferFromWheelchairEcv=" + mustTransferFromWheelchairEcv +
                 ", mustTransferToWheelchair=" + mustTransferToWheelchair +
