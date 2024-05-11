@@ -45,7 +45,7 @@ public class AttractionController {
             return new ResponseEntity<>(message, HttpStatus.OK);
         } catch(ResourceNotFoundException resourceNotFoundException) {
             message.put("message", "List of attractions not found.");
-            return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(message.get("message"), HttpStatus.NOT_FOUND);
         }
     }
 
@@ -70,7 +70,7 @@ public class AttractionController {
             return new ResponseEntity<>(message, HttpStatus.OK);
         } catch(ResourceNotFoundException resourceNotFoundException) {
             message.put("message", "Attraction with id " + attractionId + " not found");
-            return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(message.get("message"), HttpStatus.NOT_FOUND);
         }
     }
 
