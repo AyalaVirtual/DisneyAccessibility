@@ -3,7 +3,6 @@ package org.example.controller;
 import org.example.model.Park;
 import org.example.service.ParkService;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.servlet.MockMvc;
@@ -13,19 +12,12 @@ import java.util.List;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Optional;
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.hamcrest.Matchers.*;
-import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
-import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.http.MediaType;
-import com.jayway.jsonpath.JsonPath;
-import com.jayway.jsonpath.Option;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.mockito.ArgumentMatchers.anyLong;
 
 
 @WebMvcTest(ParkController.class)
@@ -42,15 +34,15 @@ public class ParkControllerTest {
     ObjectMapper objectMapper;
 
 
-    Park magicKingdom = new Park(1L, "Magic Kingdom", "image URL", "random description for Magic Kingdom", 12.24, 20.17);
-    Park hollywoodStudios = new Park(2L, "Hollywood Studios", "image URL", "random description for Hollywood Studios", 8.14, 19.88);
-    Park animalKingdom = new Park(2L, "Animal Kingdom", "image URL", "random description for Animal Kingdom", 7.02, 19.77);
-    Park epcot = new Park(2L, "Epcot", "image URL", "random description for Epcot", 3.01, 20.08);
+    Park magicKingdom = new Park(1L, "Magic Kingdom", "image URL", "Enter enchanting lands and step inside fantastical stories.", 12.24, 20.17);
+    Park hollywoodStudios = new Park(2L, "Hollywood Studios", "image URL", "Embark on a daring quest to incredible worlds.", 8.14, 19.88);
+    Park animalKingdom = new Park(2L, "Animal Kingdom", "image URL", "Watch the park come alive through the beauty and power of nature.", 7.02, 19.77);
+    Park epcot = new Park(2L, "Epcot", "image URL", "Celebrate the power of human imagination.", 3.01, 20.08);
 
 
     /**
      * This test says that when we call parkService.getAllParks(), then to return all parks.
-     * Use mockMvc to perform a GET request to the endpoint ("/api/parks/"), set the content type you're expecting, which is MediaType.APPLICATION_JSON. Expect the response status to be ok. Expect the jsonPath of the 'data' key of the payload to have a size of 3. Expect the jsonPath of the 'message' key of the payload to have a value of 'success'. Then print the message.
+     * Use mockMvc to perform a GET request to the endpoint ("/api/parks/"), set the content type you're expecting, which is MediaType.APPLICATION_JSON. Expect the response status to be ok. Expect the jsonPath of the 'data' key of the payload to have a size of 4. Expect the jsonPath of the 'message' key of the payload to have a value of 'success'. Then print the message.
      *
      * @throws Exception if list of parks not found
      */
