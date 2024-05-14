@@ -117,9 +117,4 @@ The Disney Parks Accessibility API is the back-end component of a full-stack web
 
 
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details. 
-
-
 
