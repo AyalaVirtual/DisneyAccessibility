@@ -61,7 +61,7 @@ The Disney Parks Accessibility API is the back-end component of a full-stack web
    - Navigate to the project directory.
 
 3. **Install Dependencies:**
-   - Install dependencies for both the backend modules. 
+   - Install dependencies for the backend modules. 
    - Ensure you have Java Development Kit (JDK) 8 or higher installed.
 
 4. **Set up PostgreSQL:**
