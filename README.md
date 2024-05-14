@@ -89,13 +89,6 @@ The Disney Parks Accessibility API is the back-end component of a full-stack web
 
 
 
-## Usage
-1. Open your web browser and navigate to `http://localhost:3000` to access the application.
-2. Explore parks, attractions, and accessibility information using the provided interfaces.
-3. Interact with the frontend components to view detailed attraction information and accessibility details.
-
-
-
 ## HTTP Endpoints
 
 | Request Type | URL                                                                                                   | Functionality                                                                     | Access |
