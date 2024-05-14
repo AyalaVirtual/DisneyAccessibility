@@ -54,7 +54,7 @@ The Disney Parks Accessibility API is the back-end component of a full-stack web
 ### Installation
 1. Clone the repository to your local machine:
    ```bash
-   git clone https://github.com/your-username/disney-parks-accessibility.git
+   git clone https://github.com/AyalaVirtual/DisneyParksAccessibilityAPI.git 
 
 2. **Backend Setup:** 
    - Open the project in your IDE (IntelliJ IDEA or Eclipse). 
