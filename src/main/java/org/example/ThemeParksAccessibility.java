@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class DisneyParksAccessibility {
+public class ThemeParksAccessibility {
 
     public static void main(String[] args) {
-        SpringApplication.run(DisneyParksAccessibility.class, args);
+        SpringApplication.run(ThemeParksAccessibility.class, args);
     }
 
 }

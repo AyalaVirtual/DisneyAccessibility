@@ -1,6 +1,6 @@
-# Disney Parks Accessibility API 
+# Theme Parks Accessibility API 
 
-The Disney Parks Accessibility API is the back-end component of a full-stack web application designed to provide detailed information related to Disney World parks, attractions, and accessibility features. It aims to assist visitors with disabilities or special needs in accessing detailed park and attraction information, including general accessibility details, interactive maps, and attraction descriptions. Future updates aim to enhance the park experience by offering personalized accessibility guides and resources. 
+The Theme Parks Accessibility API is the back-end component of a full-stack web application designed to provide detailed information related to theme parks, attractions, and accessibility features. It aims to assist visitors with disabilities or special needs in accessing detailed park and attraction information, including general accessibility details, interactive maps, and attraction descriptions. Future updates aim to enhance the park experience by offering personalized accessibility guides and resources. 
 
 
 
@@ -39,7 +39,7 @@ The Disney Parks Accessibility API is the back-end component of a full-stack web
 
 ## Entity Relationship Diagram
 
-<img src="images/DisneyParksAccessibilityERD.png" alt="Entity Relationship Diagram">
+<img src="images/ThemeParksAccessibilityAppERD.png" alt="Entity Relationship Diagram">
 
 
 
@@ -54,7 +54,7 @@ The Disney Parks Accessibility API is the back-end component of a full-stack web
 ### Installation
 1. Clone the repository to your local machine:
    ```bash
-   git clone https://github.com/AyalaVirtual/DisneyParksAccessibilityAPI.git 
+   git clone https://github.com/AyalaVirtual/ThemeParksAccessibilityAPI.git 
 
 2. **Backend Setup:** 
    - Open the project in your IDE (IntelliJ IDEA or Eclipse). 
@@ -66,17 +66,17 @@ The Disney Parks Accessibility API is the back-end component of a full-stack web
 
 4. **Set up PostgreSQL:**
    - Install PostgreSQL on your machine if you haven't already.
-   - Create a database for the project (e.g., disney_parks_db).
+   - Create a database for the project (e.g., themeparksaccessibility).
    - Update the database configurations in application.properties under src/main/resources in the backend module:
      ```properties
-     spring.datasource.url=jdbc:postgresql://localhost:5432/disney_parks_db
+     spring.datasource.url=jdbc:postgresql://localhost:5432/themeparksaccessibility 
      spring.datasource.username=your_username
      spring.datasource.password=your_password
      ```
 
 
 5. **Build and Run the Spring Boot Application:**
-   - Build and run the Spring Boot application (`DisneyParksAccessibilityApplication`).
+   - Build and run the Spring Boot application (`ThemeParksAccessibilityApplication`).
 
 6. **Start the Application:**
     - Once the application is running, the backend API endpoints will be available at `http://localhost:8080`. 
