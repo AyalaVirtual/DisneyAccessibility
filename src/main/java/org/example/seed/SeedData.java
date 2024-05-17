@@ -157,7 +157,7 @@ public class SeedData implements CommandLineRunner {
         mysticalForestA11y.setServiceAnimalReliefAreas(randomList);
         mysticalForestA11y.setCompanionRestroomLocations(randomList);
         mysticalForestA11y.setFirstAidLocations("by front entrance");
-        mysticalForestA11y.setPark(enchantedRealm);
+        mysticalForestA11y.setPark(mysticalForest);
         parkAccessibilityRepository.save(mysticalForestA11y);
 
 
@@ -200,7 +200,7 @@ public class SeedData implements CommandLineRunner {
         fantasyGalaxyA11y.setServiceAnimalReliefAreas(randomList);
         fantasyGalaxyA11y.setCompanionRestroomLocations(randomList);
         fantasyGalaxyA11y.setFirstAidLocations("by front entrance");
-        fantasyGalaxyA11y.setPark(enchantedRealm);
+        fantasyGalaxyA11y.setPark(fantasyGalaxy);
         parkAccessibilityRepository.save(fantasyGalaxyA11y);
 
 
@@ -210,7 +210,7 @@ public class SeedData implements CommandLineRunner {
         starfallObservatory.setDescription("Located in the Fantasy Galaxy, this futuristic observatory offers stargazing like no other. Peer through telescopes to see distant planets, meteor showers, and celestial wonders.");
         starfallObservatory.setLatitude(12.24);
         starfallObservatory.setLongitude(20.17);
-        starfallObservatory.setPark(enchantedRealm);
+        starfallObservatory.setPark(fantasyGalaxy);
         attractionRepository.save(starfallObservatory);
 
         AttractionAccessibility starfallObservatoryA11y = new AttractionAccessibility();
