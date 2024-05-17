@@ -53,7 +53,7 @@ public class SeedData implements CommandLineRunner {
 
         Park magicKingdom = new Park();
         magicKingdom.setName("Magic Kingdom");
-        magicKingdom.setImageUrl(image);
+        magicKingdom.setImageUrl("https://orlandoinformer.com/wp-content/uploads/2022/04/20200709-DSC03982.jpg");
         magicKingdom.setDescription("Enter a world of enchantment and wonder at Magic Kingdom, where fairy tales come to life. From meeting beloved Disney characters to experiencing magical parades and fireworks, Magic Kingdom is a timeless destination for guests of all ages.");
         magicKingdom.setLatitude(28.4188);
         magicKingdom.setLongitude(81.5818);
@@ -115,7 +115,7 @@ public class SeedData implements CommandLineRunner {
 
         Park hollywoodStudios = new Park();
         hollywoodStudios.setName("Hollywood Studios");
-        hollywoodStudios.setImageUrl(image);
+        hollywoodStudios.setImageUrl("https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/TowerOfTerror_MGM.jpg/375px-TowerOfTerror_MGM.jpg");
         hollywoodStudios.setDescription("Step into the glitz and glamour of showbiz at Disney's Hollywood Studios, where the magic of movies and television comes to life.");
         hollywoodStudios.setLatitude(28.3581);
         hollywoodStudios.setLongitude(-81.5591);
@@ -173,6 +173,25 @@ public class SeedData implements CommandLineRunner {
         meetOlafA11y.setSensoryExperience(sensoryExperience);
         meetOlafA11y.setAttraction(meetOlaf);
         attractionAccessibilityRepository.save(meetOlafA11y);
+
+
+        Park animalKingdom = new Park();
+        animalKingdom.setName("Animal Kingdom");
+        animalKingdom.setImageUrl("https://wdwmagic.twic.pics/ElementGalleryItems/attractions/Fullsize/Animal-Kingdom_Full_24518.jpg?twic=v1/max=1710x1350");
+        animalKingdom.setDescription("Embark on a wild expedition at Disney's Animal Kingdom. Encounter exotic animals, enjoy thrilling rides, and connect with nature in immersive and educational experiences that inspire a deeper appreciation for our planet's wildlife and ecosystems.");
+        animalKingdom.setLatitude(28.3574);
+        animalKingdom.setLongitude(81.5906);
+        parkRepository.save(animalKingdom);
+
+
+
+        Park epcot = new Park();
+        epcot.setName("EPCOT");
+        epcot.setImageUrl("https://myvillakey.com/wp-content/uploads/2021/05/What-to-Do-at-Epcot-International-Flower-and-Garden-Festival.jpg");
+        epcot.setDescription("Explore the wonders of the past, present, and future at EPCOT, where innovation meets imagination. Discover technological innovations and international cuisine as you journey through this celebration of human achievement and global diversity.");
+        epcot.setLatitude(28.3765);
+        epcot.setLongitude(81.5494);
+        parkRepository.save(epcot);
 
     }
 }
