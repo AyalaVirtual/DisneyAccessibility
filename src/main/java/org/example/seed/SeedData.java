@@ -78,8 +78,7 @@ public class SeedData implements CommandLineRunner {
         Attraction dreamweaversDen = new Attraction();
         dreamweaversDen.setName("Dreamweaver's Den");
         dreamweaversDen.setImageUrl("dreamweavers-den");
-        dreamweaversDen.setDescription("Enter the magical workshop of the Dreamweaver—an inventor who weaves dreams\n" +
-                "into reality. Explore fantastical contraptions and discover your own dream thread.");
+        dreamweaversDen.setDescription("Enter the magical workshop of the Dreamweaver—an inventor who weaves dreams into reality. Explore fantastical contraptions and discover your own dream thread.");
         dreamweaversDen.setLatitude(12.24);
         dreamweaversDen.setLongitude(20.17);
         dreamweaversDen.setPark(enchantedRealm);
@@ -122,8 +121,7 @@ public class SeedData implements CommandLineRunner {
         Attraction lostLagoon = new Attraction();
         lostLagoon.setName("Lost Lagoon");
         lostLagoon.setImageUrl("https://drive.google.com/file/d/1iMSg-KWxZswRAGXZ8TtGs_5T3Ja_ewhb/view?usp=sharing");
-        lostLagoon.setDescription("Dive into the crystal-clear waters of this tropical oasis in Expedition Isle. Snorkel\n" +
-                "alongside colorful fish, explore hidden caves, and uncover sunken treasures.");
+        lostLagoon.setDescription("Dive into the crystal-clear waters of this tropical oasis in Expedition Isle. Snorkel alongside colorful fish, explore hidden caves, and uncover sunken treasures.");
         lostLagoon.setLatitude(3.01);
         lostLagoon.setLongitude(20.08);
         lostLagoon.setPark(expeditionIsle);
@@ -166,8 +164,7 @@ public class SeedData implements CommandLineRunner {
         Attraction etherealGardens = new Attraction();
         etherealGardens.setName("Ethereal Gardens");
         etherealGardens.setImageUrl("https://drive.google.com/file/d/1cwPlL-7mUnTA8RaowXtbzhoztu3Tg7OO/view?usp=sharing");
-        etherealGardens.setDescription("A serene oasis within the Mystical Forest, these gardens bloom with otherworldly\n" +
-                "flowers. Each blossom grants a wish—choose wisely!");
+        etherealGardens.setDescription("A serene oasis within the Mystical Forest, these gardens bloom with otherworldly flowers. Each blossom grants a wish—choose wisely!");
         etherealGardens.setLatitude(12.24);
         etherealGardens.setLongitude(20.17);
         etherealGardens.setPark(mysticalForest);
@@ -210,9 +207,7 @@ public class SeedData implements CommandLineRunner {
         Attraction starfallObservatory = new Attraction();
         starfallObservatory.setName("Starfall Observatory");
         starfallObservatory.setImageUrl("https://drive.google.com/file/d/1cwPlL-7mUnTA8RaowXtbzhoztu3Tg7OO/view?usp=sharing");
-        starfallObservatory.setDescription("Located in the Fantasy Galaxy, this futuristic observatory offers stargazing like no\n" +
-                "other. Peer through telescopes to see distant planets, meteor showers, and\n" +
-                "celestial wonders.");
+        starfallObservatory.setDescription("Located in the Fantasy Galaxy, this futuristic observatory offers stargazing like no other. Peer through telescopes to see distant planets, meteor showers, and celestial wonders.");
         starfallObservatory.setLatitude(12.24);
         starfallObservatory.setLongitude(20.17);
         starfallObservatory.setPark(enchantedRealm);
