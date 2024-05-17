@@ -51,147 +51,181 @@ public class SeedData implements CommandLineRunner {
         SensoryExperience sensoryExperience = new SensoryExperience(true, false, true, false, true, true, false, true, "sudden turns and drops", "seatbelts", "7 minutes");
 
 
-        Park magicKingdom = new Park();
-        magicKingdom.setName("Magic Kingdom");
-        magicKingdom.setImageUrl("https://orlandoinformer.com/wp-content/uploads/2022/04/20200709-DSC03982.jpg");
-        magicKingdom.setDescription("Enter a world of enchantment and wonder at Magic Kingdom, where fairy tales come to life. From meeting beloved Disney characters to experiencing magical parades and fireworks, Magic Kingdom is a timeless destination for guests of all ages.");
-        magicKingdom.setLatitude(28.4188);
-        magicKingdom.setLongitude(81.5818);
-        parkRepository.save(magicKingdom);
+        Park enchantedRealm = new Park();
+        enchantedRealm.setName("Enchanted Realm");
+        enchantedRealm.setImageUrl("https://drive.google.com/file/d/1yNwfgmo7WQ4Z9znTldkFu-NKJbBhUPPk/view?usp=sharing");
+        enchantedRealm.setDescription("Enter a world of enchantment and wonder at Enchanted Realm, where fairy tales come to life. From meeting beloved Malt Fizzby characters to experiencing magical parades and fireworks, Enchanted Realm is a timeless destination for guests of all ages.");
+        enchantedRealm.setLatitude(28.4188);
+        enchantedRealm.setLongitude(81.5818);
+        parkRepository.save(enchantedRealm);
 
-        ParkAccessibility magicKingdomA11y = new ParkAccessibility();
-        magicKingdomA11y.setRentalLocations(randomList);
-        magicKingdomA11y.setWheelchairReplacementLocations(randomList);
-        magicKingdomA11y.setBreakLocations(randomList);
-        magicKingdomA11y.setStationaryBrailleMapLocations(randomList);
-        magicKingdomA11y.setSignLanguageSchedule("Schedule");
-        magicKingdomA11y.setGuestRelationsLocations(randomList);
-        magicKingdomA11y.setServiceAnimalRestrictions_Ride(randomList);
-        magicKingdomA11y.setServiceAnimalRestrictions_Board(randomList);
-        magicKingdomA11y.setServiceAnimalReliefAreas(randomList);
-        magicKingdomA11y.setCompanionRestroomLocations(randomList);
-        magicKingdomA11y.setFirstAidLocations("by front entrance");
-        magicKingdomA11y.setPark(magicKingdom);
-        parkAccessibilityRepository.save(magicKingdomA11y);
-
-
-        Attraction cinderellasCastle = new Attraction();
-        cinderellasCastle.setName("Cinderella Castle");
-        cinderellasCastle.setImageUrl(image);
-        cinderellasCastle.setDescription("Inspired by the castle in the Disney film Cinderella, this enchanting edifice is the symbol of Magic Kingdom park.");
-        cinderellasCastle.setLatitude(12.24);
-        cinderellasCastle.setLongitude(20.17);
-        cinderellasCastle.setPark(magicKingdom);
-        attractionRepository.save(cinderellasCastle);
-
-        AttractionAccessibility cinderellasCastleA11y = new AttractionAccessibility();
-        cinderellasCastleA11y.setMustTransfer(mustTransfer);
-        cinderellasCastleA11y.setTransferAssistance(transferAssistance);
-        cinderellasCastleA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
-        cinderellasCastleA11y.setAssistiveDevices(assistiveDevices);
-        cinderellasCastleA11y.setSensoryExperience(sensoryExperience);
-        cinderellasCastleA11y.setAttraction(cinderellasCastle);
-        attractionAccessibilityRepository.save(cinderellasCastleA11y);
+        ParkAccessibility enchantedRealmA11y = new ParkAccessibility();
+        enchantedRealmA11y.setRentalLocations(randomList);
+        enchantedRealmA11y.setWheelchairReplacementLocations(randomList);
+        enchantedRealmA11y.setBreakLocations(randomList);
+        enchantedRealmA11y.setStationaryBrailleMapLocations(randomList);
+        enchantedRealmA11y.setSignLanguageSchedule("Schedule");
+        enchantedRealmA11y.setGuestRelationsLocations(randomList);
+        enchantedRealmA11y.setServiceAnimalRestrictions_Ride(randomList);
+        enchantedRealmA11y.setServiceAnimalRestrictions_Board(randomList);
+        enchantedRealmA11y.setServiceAnimalReliefAreas(randomList);
+        enchantedRealmA11y.setCompanionRestroomLocations(randomList);
+        enchantedRealmA11y.setFirstAidLocations("by front entrance");
+        enchantedRealmA11y.setPark(enchantedRealm);
+        parkAccessibilityRepository.save(enchantedRealmA11y);
 
 
-        Attraction meetAriel = new Attraction();
-        meetAriel.setName("Meet Ariel at Her Grotto");
-        meetAriel.setImageUrl(image);
-        meetAriel.setDescription("The Little Mermaid greets friends from both the land and sea in her shimmering ocean retreat.");
-        meetAriel.setLatitude(8.14);
-        meetAriel.setLongitude(19.88);
-        meetAriel.setPark(magicKingdom);
-        attractionRepository.save(meetAriel);
+        Attraction dreamweaversDen = new Attraction();
+        dreamweaversDen.setName("Dreamweaver's Den");
+        dreamweaversDen.setImageUrl("dreamweavers-den");
+        dreamweaversDen.setDescription("Enter the magical workshop of the Dreamweaver—an inventor who weaves dreams\n" +
+                "into reality. Explore fantastical contraptions and discover your own dream thread.");
+        dreamweaversDen.setLatitude(12.24);
+        dreamweaversDen.setLongitude(20.17);
+        dreamweaversDen.setPark(enchantedRealm);
+        attractionRepository.save(dreamweaversDen);
 
-        AttractionAccessibility meetArielA11y = new AttractionAccessibility();
-        meetArielA11y.setMustTransfer(mustTransfer);
-        meetArielA11y.setTransferAssistance(transferAssistance);
-        meetArielA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
-        meetArielA11y.setAssistiveDevices(assistiveDevices);
-        meetArielA11y.setSensoryExperience(sensoryExperience);
-        meetArielA11y.setAttraction(meetAriel);
-        attractionAccessibilityRepository.save(meetArielA11y);
-
-
-        Park hollywoodStudios = new Park();
-        hollywoodStudios.setName("Hollywood Studios");
-        hollywoodStudios.setImageUrl("https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/TowerOfTerror_MGM.jpg/375px-TowerOfTerror_MGM.jpg");
-        hollywoodStudios.setDescription("Step into the glitz and glamour of showbiz at Disney's Hollywood Studios, where the magic of movies and television comes to life.");
-        hollywoodStudios.setLatitude(28.3581);
-        hollywoodStudios.setLongitude(-81.5591);
-        parkRepository.save(hollywoodStudios);
-
-        ParkAccessibility hollywoodStudiosA11y = new ParkAccessibility();
-        hollywoodStudiosA11y.setRentalLocations(randomList);
-        hollywoodStudiosA11y.setWheelchairReplacementLocations(randomList);
-        hollywoodStudiosA11y.setBreakLocations(randomList);
-        hollywoodStudiosA11y.setStationaryBrailleMapLocations(randomList);
-        hollywoodStudiosA11y.setSignLanguageSchedule("Testing if works");
-        hollywoodStudiosA11y.setGuestRelationsLocations(randomList);
-        hollywoodStudiosA11y.setServiceAnimalRestrictions_Ride(randomList);
-        hollywoodStudiosA11y.setServiceAnimalRestrictions_Board(randomList);
-        hollywoodStudiosA11y.setServiceAnimalReliefAreas(randomList);
-        hollywoodStudiosA11y.setCompanionRestroomLocations(randomList);
-        hollywoodStudiosA11y.setFirstAidLocations("near Guest Relations");
-        hollywoodStudiosA11y.setPark(hollywoodStudios);
-        parkAccessibilityRepository.save(hollywoodStudiosA11y);
+        AttractionAccessibility dreamweaversDenA11y = new AttractionAccessibility();
+        dreamweaversDenA11y.setMustTransfer(mustTransfer);
+        dreamweaversDenA11y.setTransferAssistance(transferAssistance);
+        dreamweaversDenA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
+        dreamweaversDenA11y.setAssistiveDevices(assistiveDevices);
+        dreamweaversDenA11y.setSensoryExperience(sensoryExperience);
+        dreamweaversDenA11y.setAttraction(dreamweaversDen);
+        attractionAccessibilityRepository.save(dreamweaversDenA11y);
 
 
-        Attraction frozenSingAlong = new Attraction();
-        frozenSingAlong.setName("For the First Time in Forever: A Frozen Sing-Along Celebration");
-        frozenSingAlong.setImageUrl(image);
-        frozenSingAlong.setDescription("You’ll melt for this heartwarming celebration of Frozen with a flurry of stories, songs and special guests.");
-        frozenSingAlong.setLatitude(3.01);
-        frozenSingAlong.setLongitude(20.08);
-        frozenSingAlong.setPark(hollywoodStudios);
-        attractionRepository.save(frozenSingAlong);
+        Park expeditionIsle = new Park();
+        expeditionIsle.setName("Expedition Isle");
+        expeditionIsle.setImageUrl("");
+        expeditionIsle.setDescription("Step into the adventure at Malt Fizzby's Expedition Isle, where the magic of exploring the unknown comes to life.");
+        expeditionIsle.setLatitude(28.3581);
+        expeditionIsle.setLongitude(-81.5591);
+        parkRepository.save(expeditionIsle);
 
-        AttractionAccessibility frozenSingAlongA11y = new AttractionAccessibility();
-        frozenSingAlongA11y.setMustTransfer(mustTransfer);
-        frozenSingAlongA11y.setTransferAssistance(transferAssistance);
-        frozenSingAlongA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
-        frozenSingAlongA11y.setAssistiveDevices(assistiveDevices);
-        frozenSingAlongA11y.setSensoryExperience(sensoryExperience);
-        frozenSingAlongA11y.setAttraction(frozenSingAlong);
-        attractionAccessibilityRepository.save(frozenSingAlongA11y);
-
-
-        Attraction meetOlaf = new Attraction();
-        meetOlaf.setName("Meet Olaf at Celebrity Spotlight");
-        meetOlaf.setImageUrl(image);
-        meetOlaf.setDescription("See Olaf the snowman from Disney’s Frozen—who’s finally doing what frozen things do in summer.");
-        meetOlaf.setLatitude(7.02);
-        meetOlaf.setLongitude(19.77);
-        meetOlaf.setPark(hollywoodStudios);
-        attractionRepository.save(meetOlaf);
-
-        AttractionAccessibility meetOlafA11y = new AttractionAccessibility();
-        meetOlafA11y.setMustTransfer(mustTransfer);
-        meetOlafA11y.setTransferAssistance(transferAssistance);
-        meetOlafA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
-        meetOlafA11y.setAssistiveDevices(assistiveDevices);
-        meetOlafA11y.setSensoryExperience(sensoryExperience);
-        meetOlafA11y.setAttraction(meetOlaf);
-        attractionAccessibilityRepository.save(meetOlafA11y);
+        ParkAccessibility expeditionIsleA11y = new ParkAccessibility();
+        expeditionIsleA11y.setRentalLocations(randomList);
+        expeditionIsleA11y.setWheelchairReplacementLocations(randomList);
+        expeditionIsleA11y.setBreakLocations(randomList);
+        expeditionIsleA11y.setStationaryBrailleMapLocations(randomList);
+        expeditionIsleA11y.setSignLanguageSchedule("Testing if works");
+        expeditionIsleA11y.setGuestRelationsLocations(randomList);
+        expeditionIsleA11y.setServiceAnimalRestrictions_Ride(randomList);
+        expeditionIsleA11y.setServiceAnimalRestrictions_Board(randomList);
+        expeditionIsleA11y.setServiceAnimalReliefAreas(randomList);
+        expeditionIsleA11y.setCompanionRestroomLocations(randomList);
+        expeditionIsleA11y.setFirstAidLocations("near Guest Relations");
+        expeditionIsleA11y.setPark(expeditionIsle);
+        parkAccessibilityRepository.save(expeditionIsleA11y);
 
 
-        Park animalKingdom = new Park();
-        animalKingdom.setName("Animal Kingdom");
-        animalKingdom.setImageUrl("https://wdwmagic.twic.pics/ElementGalleryItems/attractions/Fullsize/Animal-Kingdom_Full_24518.jpg?twic=v1/max=1710x1350");
-        animalKingdom.setDescription("Embark on a wild expedition at Disney's Animal Kingdom. Encounter exotic animals, enjoy thrilling rides, and connect with nature in immersive and educational experiences that inspire a deeper appreciation for our planet's wildlife and ecosystems.");
-        animalKingdom.setLatitude(28.3574);
-        animalKingdom.setLongitude(81.5906);
-        parkRepository.save(animalKingdom);
+        Attraction lostLagoon = new Attraction();
+        lostLagoon.setName("Lost Lagoon");
+        lostLagoon.setImageUrl("https://drive.google.com/file/d/1iMSg-KWxZswRAGXZ8TtGs_5T3Ja_ewhb/view?usp=sharing");
+        lostLagoon.setDescription("Dive into the crystal-clear waters of this tropical oasis in Expedition Isle. Snorkel\n" +
+                "alongside colorful fish, explore hidden caves, and uncover sunken treasures.");
+        lostLagoon.setLatitude(3.01);
+        lostLagoon.setLongitude(20.08);
+        lostLagoon.setPark(expeditionIsle);
+        attractionRepository.save(lostLagoon);
+
+        AttractionAccessibility lostLagoonA11y = new AttractionAccessibility();
+        lostLagoonA11y.setMustTransfer(mustTransfer);
+        lostLagoonA11y.setTransferAssistance(transferAssistance);
+        lostLagoonA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
+        lostLagoonA11y.setAssistiveDevices(assistiveDevices);
+        lostLagoonA11y.setSensoryExperience(sensoryExperience);
+        lostLagoonA11y.setAttraction(lostLagoon);
+        attractionAccessibilityRepository.save(lostLagoonA11y);
 
 
+        Park mysticalForest = new Park();
+        mysticalForest.setName("Mystical Forest");
+        mysticalForest.setImageUrl("https://drive.google.com/file/d/1cwPlL-7mUnTA8RaowXtbzhoztu3Tg7OO/view?usp=sharing");
+        mysticalForest.setDescription("Embark on a wild expedition at Malt Fizzby's Mystical Forest. Encounter exotic animals, enjoy thrilling rides, and connect with nature in immersive and educational experiences that inspire a deeper appreciation for our planet's wildlife and ecosystems.");
+        mysticalForest.setLatitude(28.3574);
+        mysticalForest.setLongitude(81.5906);
+        parkRepository.save(mysticalForest);
 
-        Park epcot = new Park();
-        epcot.setName("EPCOT");
-        epcot.setImageUrl("https://myvillakey.com/wp-content/uploads/2021/05/What-to-Do-at-Epcot-International-Flower-and-Garden-Festival.jpg");
-        epcot.setDescription("Explore the wonders of the past, present, and future at EPCOT, where innovation meets imagination. Discover technological innovations and international cuisine as you journey through this celebration of human achievement and global diversity.");
-        epcot.setLatitude(28.3765);
-        epcot.setLongitude(81.5494);
-        parkRepository.save(epcot);
+        ParkAccessibility mysticalForestA11y = new ParkAccessibility();
+        mysticalForestA11y.setRentalLocations(randomList);
+        mysticalForestA11y.setWheelchairReplacementLocations(randomList);
+        mysticalForestA11y.setBreakLocations(randomList);
+        mysticalForestA11y.setStationaryBrailleMapLocations(randomList);
+        mysticalForestA11y.setSignLanguageSchedule("Schedule");
+        mysticalForestA11y.setGuestRelationsLocations(randomList);
+        mysticalForestA11y.setServiceAnimalRestrictions_Ride(randomList);
+        mysticalForestA11y.setServiceAnimalRestrictions_Board(randomList);
+        mysticalForestA11y.setServiceAnimalReliefAreas(randomList);
+        mysticalForestA11y.setCompanionRestroomLocations(randomList);
+        mysticalForestA11y.setFirstAidLocations("by front entrance");
+        mysticalForestA11y.setPark(enchantedRealm);
+        parkAccessibilityRepository.save(mysticalForestA11y);
+
+
+        Attraction etherealGardens = new Attraction();
+        etherealGardens.setName("Ethereal Gardens");
+        etherealGardens.setImageUrl("https://drive.google.com/file/d/1cwPlL-7mUnTA8RaowXtbzhoztu3Tg7OO/view?usp=sharing");
+        etherealGardens.setDescription("A serene oasis within the Mystical Forest, these gardens bloom with otherworldly\n" +
+                "flowers. Each blossom grants a wish—choose wisely!");
+        etherealGardens.setLatitude(12.24);
+        etherealGardens.setLongitude(20.17);
+        etherealGardens.setPark(mysticalForest);
+        attractionRepository.save(etherealGardens);
+
+        AttractionAccessibility etherealGardensA11y = new AttractionAccessibility();
+        etherealGardensA11y.setMustTransfer(mustTransfer);
+        etherealGardensA11y.setTransferAssistance(transferAssistance);
+        etherealGardensA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
+        etherealGardensA11y.setAssistiveDevices(assistiveDevices);
+        etherealGardensA11y.setSensoryExperience(sensoryExperience);
+        etherealGardensA11y.setAttraction(etherealGardens);
+        attractionAccessibilityRepository.save(etherealGardensA11y);
+
+
+        Park fantasyGalaxy = new Park();
+        fantasyGalaxy.setName("Fantasy Galaxy");
+        fantasyGalaxy.setImageUrl("https://drive.google.com/file/d/1cwPlL-7mUnTA8RaowXtbzhoztu3Tg7OO/view?usp=sharing");
+        fantasyGalaxy.setDescription("Explore the wonders of the past, present, and future at Fantasy Galaxy, where innovation meets imagination. Discover technological innovations and international cuisine as you journey through this celebration of human achievement and global diversity.");
+        fantasyGalaxy.setLatitude(28.3765);
+        fantasyGalaxy.setLongitude(81.5494);
+        parkRepository.save(fantasyGalaxy);
+
+        ParkAccessibility fantasyGalaxyA11y = new ParkAccessibility();
+        fantasyGalaxyA11y.setRentalLocations(randomList);
+        fantasyGalaxyA11y.setWheelchairReplacementLocations(randomList);
+        fantasyGalaxyA11y.setBreakLocations(randomList);
+        fantasyGalaxyA11y.setStationaryBrailleMapLocations(randomList);
+        fantasyGalaxyA11y.setSignLanguageSchedule("Schedule");
+        fantasyGalaxyA11y.setGuestRelationsLocations(randomList);
+        fantasyGalaxyA11y.setServiceAnimalRestrictions_Ride(randomList);
+        fantasyGalaxyA11y.setServiceAnimalRestrictions_Board(randomList);
+        fantasyGalaxyA11y.setServiceAnimalReliefAreas(randomList);
+        fantasyGalaxyA11y.setCompanionRestroomLocations(randomList);
+        fantasyGalaxyA11y.setFirstAidLocations("by front entrance");
+        fantasyGalaxyA11y.setPark(enchantedRealm);
+        parkAccessibilityRepository.save(fantasyGalaxyA11y);
+
+
+        Attraction starfallObservatory = new Attraction();
+        starfallObservatory.setName("Starfall Observatory");
+        starfallObservatory.setImageUrl("https://drive.google.com/file/d/1cwPlL-7mUnTA8RaowXtbzhoztu3Tg7OO/view?usp=sharing");
+        starfallObservatory.setDescription("Located in the Fantasy Galaxy, this futuristic observatory offers stargazing like no\n" +
+                "other. Peer through telescopes to see distant planets, meteor showers, and\n" +
+                "celestial wonders.");
+        starfallObservatory.setLatitude(12.24);
+        starfallObservatory.setLongitude(20.17);
+        starfallObservatory.setPark(enchantedRealm);
+        attractionRepository.save(starfallObservatory);
+
+        AttractionAccessibility starfallObservatoryA11y = new AttractionAccessibility();
+        starfallObservatoryA11y.setMustTransfer(mustTransfer);
+        starfallObservatoryA11y.setTransferAssistance(transferAssistance);
+        starfallObservatoryA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
+        starfallObservatoryA11y.setAssistiveDevices(assistiveDevices);
+        starfallObservatoryA11y.setSensoryExperience(sensoryExperience);
+        starfallObservatoryA11y.setAttraction(starfallObservatory);
+        attractionAccessibilityRepository.save(starfallObservatoryA11y);
 
     }
 }
