@@ -5,39 +5,39 @@ import jakarta.persistence.Embeddable;
 
 @Embeddable
 public class ServiceAnimalRestrictions {
-    private boolean rideRestrictions;
-    private boolean boardRestrictions;
+    private boolean serviceAnimalRideRestrictions;
+    private boolean serviceAnimalBoardingRestrictions;
 
 
     public ServiceAnimalRestrictions() {
     }
 
     public ServiceAnimalRestrictions(boolean rideRestrictions, boolean boardRestrictions) {
-        this.rideRestrictions = rideRestrictions;
-        this.boardRestrictions = boardRestrictions;
+        this.serviceAnimalRideRestrictions = rideRestrictions;
+        this.serviceAnimalBoardingRestrictions = boardRestrictions;
     }
 
-    public boolean getRideRestrictions() {
-        return rideRestrictions;
+    public boolean getServiceAnimalRideRestrictions() {
+        return serviceAnimalRideRestrictions;
     }
 
-    public void setRideRestrictions(boolean rideRestrictions) {
-        this.rideRestrictions = rideRestrictions;
+    public void setServiceAnimalRideRestrictions(boolean serviceAnimalRideRestrictions) {
+        this.serviceAnimalRideRestrictions = serviceAnimalRideRestrictions;
     }
 
-    public boolean getBoardRestrictions() {
-        return boardRestrictions;
+    public boolean getServiceAnimalBoardingRestrictions() {
+        return serviceAnimalBoardingRestrictions;
     }
 
-    public void setBoardRestrictions(boolean boardRestrictions) {
-        this.boardRestrictions = boardRestrictions;
+    public void setServiceAnimalBoardingRestrictions(boolean serviceAnimalBoardingRestrictions) {
+        this.serviceAnimalBoardingRestrictions = serviceAnimalBoardingRestrictions;
     }
 
     @Override
     public String toString() {
         return "ServiceAnimalRestrictions{" +
-                "rideRestrictions=" + rideRestrictions +
-                ", boardRestrictions=" + boardRestrictions +
+                "rideRestrictions=" + serviceAnimalRideRestrictions +
+                ", boardRestrictions=" + serviceAnimalBoardingRestrictions +
                 '}';
     }
 }
