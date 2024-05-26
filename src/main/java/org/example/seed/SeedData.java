@@ -57,8 +57,8 @@ public class SeedData implements CommandLineRunner {
         enchantedRealm.setName("Enchanted Realm");
         enchantedRealm.setImageUrl("https://img.pikbest.com/origin/09/42/18/71NpIkbEsTxXv.jpg!sw800");
         enchantedRealm.setDescription("Enter a world of enchantment and wonder at Enchanted Realm, where fairy tales come to life. From meeting beloved Malt Fizzby characters to experiencing magical parades and fireworks, Enchanted Realm is a timeless destination for guests of all ages.");
-        enchantedRealm.setLatitude(28.4188);
-        enchantedRealm.setLongitude(81.5818);
+        enchantedRealm.setLatitude(28.418783);
+        enchantedRealm.setLongitude(-81.581228);
         parkRepository.save(enchantedRealm);
 
         ParkAccessibility enchantedRealmA11y = new ParkAccessibility();
@@ -366,7 +366,7 @@ public class SeedData implements CommandLineRunner {
         enchantedCarousel.setImageUrl(image);
         enchantedCarousel.setDescription("Take a ride on the Enchanted Carousel, where mythical creatures prance to the melody of enchanting music. Feel the magic in the air as you whirl around.");
         enchantedCarousel.setLatitude(28.4200);
-        enchantedCarousel.setLongitude(81.5830);
+        enchantedCarousel.setLongitude(-81.5830);
         enchantedCarousel.setPark(enchantedRealm);
         attractionRepository.save(enchantedCarousel);
 
@@ -425,8 +425,8 @@ public class SeedData implements CommandLineRunner {
         expeditionIsle.setName("Expedition Isle");
         expeditionIsle.setImageUrl("https://img.freepik.com/photos-premium/cascade-dans-jungle_737761-2192.jpg");
         expeditionIsle.setDescription("Step into the adventure at Malt Fizzby's Expedition Isle, where the magic of exploring the unknown comes to life.");
-        expeditionIsle.setLatitude(28.3581);
-        expeditionIsle.setLongitude(-81.5591);
+        expeditionIsle.setLatitude(28.357373);
+        expeditionIsle.setLongitude(-81.560117);
         parkRepository.save(expeditionIsle);
 
         ParkAccessibility expeditionIsleA11y = new ParkAccessibility();
@@ -698,8 +698,8 @@ public class SeedData implements CommandLineRunner {
         mysticalForest.setName("Mystical Forest");
         mysticalForest.setImageUrl("https://t3.ftcdn.net/jpg/06/10/66/24/360_F_610662465_iflFvBuFDazEDvnLSwMiElTI4jDIdpdK.jpg");
         mysticalForest.setDescription("Embark on a wild expedition at Malt Fizzby's Mystical Forest. Encounter exotic animals, enjoy thrilling rides, and connect with nature in immersive and educational experiences that inspire a deeper appreciation for our planet's wildlife and ecosystems.");
-        mysticalForest.setLatitude(28.3574);
-        mysticalForest.setLongitude(81.5906);
+        mysticalForest.setLatitude(28.360317);
+        mysticalForest.setLongitude(-81.591293);
         parkRepository.save(mysticalForest);
 
         ParkAccessibility mysticalForestA11y = new ParkAccessibility();
@@ -971,8 +971,8 @@ public class SeedData implements CommandLineRunner {
         fantasyGalaxy.setName("Fantasy Galaxy");
         fantasyGalaxy.setImageUrl("https://cdn.dribbble.com/userupload/12230049/file/original-79264f668db395868455ca1f0ee14cd2.png?resize=400x300&vertical=center");
         fantasyGalaxy.setDescription("Explore the wonders of the past, present, and future at Fantasy Galaxy, where innovation meets imagination. Discover technological innovations and international cuisine as you journey through this celebration of human achievement and global diversity.");
-        fantasyGalaxy.setLatitude(28.3765);
-        fantasyGalaxy.setLongitude(81.5494);
+        fantasyGalaxy.setLatitude(28.371841);
+        fantasyGalaxy.setLongitude(-81.549450);
         parkRepository.save(fantasyGalaxy);
 
         ParkAccessibility fantasyGalaxyA11y = new ParkAccessibility();
