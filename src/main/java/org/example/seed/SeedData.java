@@ -81,8 +81,8 @@ public class SeedData implements CommandLineRunner {
         dreamweaversDen.setName("Dreamweaver's Den");
         dreamweaversDen.setImageUrl("https://drive.google.com/thumbnail?id=11Qpx_zHLU_nst2P4lsmvcQqW8PMPJ_QU&sz=w200-h200");
         dreamweaversDen.setDescription("Enter the magical workshop of the Dreamweaver—an inventor who weaves dreams into reality. Explore fantastical contraptions and discover your own dream thread.");
-        dreamweaversDen.setLatitude(12.24);
-        dreamweaversDen.setLongitude(20.17);
+        dreamweaversDen.setLatitude(28.41946);
+        dreamweaversDen.setLongitude(-81.58117);
         dreamweaversDen.setPark(enchantedRealm);
         attractionRepository.save(dreamweaversDen);
 
@@ -421,12 +421,285 @@ public class SeedData implements CommandLineRunner {
 
 
 
+        Park tinselTownStudios = new Park();
+        tinselTownStudios.setName("Tinseltown Studios");
+        tinselTownStudios.setImageUrl("https://drive.google.com/thumbnail?id=1RtjyjZphWyQzTtKL2VZm98g3XifvCJuy&sz=w200-h200");
+        tinselTownStudios.setDescription("An homage to Hollywood’s glamorous past, Tinseltown Studios celebrates the golden age of cinema, inviting guests to experience the glitz, glamour, and behind-the-scenes magic through thrilling rides and immersive shows.");
+        tinselTownStudios.setLatitude(28.357373);
+        tinselTownStudios.setLongitude(-81.560117);
+        parkRepository.save(tinselTownStudios);
+
+        ParkAccessibility tinselTownStudiosA11y = new ParkAccessibility();
+        tinselTownStudiosA11y.setRentalLocations(randomList);
+        tinselTownStudiosA11y.setWheelchairReplacementLocations(randomList);
+        tinselTownStudiosA11y.setBreakLocations(randomList);
+        tinselTownStudiosA11y.setStationaryBrailleMapLocations(randomList);
+        tinselTownStudiosA11y.setSignLanguageSchedule(schedule);
+        tinselTownStudiosA11y.setGuestRelationsLocations(randomList);
+        tinselTownStudiosA11y.setServiceAnimalRestrictions_Ride(randomList);
+        tinselTownStudiosA11y.setServiceAnimalRestrictions_Board(randomList);
+        tinselTownStudiosA11y.setServiceAnimalReliefAreas(randomList);
+        tinselTownStudiosA11y.setCompanionRestroomLocations(randomList);
+        tinselTownStudiosA11y.setFirstAidLocations("by front entrance");
+        tinselTownStudiosA11y.setPark(tinselTownStudios);
+        parkAccessibilityRepository.save(tinselTownStudiosA11y);
+
+
+        Attraction etherealGardens = new Attraction();
+        etherealGardens.setName("Ethereal Gardens");
+        etherealGardens.setImageUrl("https://drive.google.com/thumbnail?id=12xb4AxNSIDkE6Qbw5KcjSytQyjuwPmo4&sz=w200-h200");
+        etherealGardens.setDescription("A serene oasis within the Mystical Forest, these gardens bloom with otherworldly flowers. Each blossom grants a wish—choose wisely!");
+        etherealGardens.setLatitude(12.24);
+        etherealGardens.setLongitude(20.17);
+        etherealGardens.setPark(tinselTownStudios);
+        attractionRepository.save(etherealGardens);
+
+        AttractionAccessibility etherealGardensA11y = new AttractionAccessibility();
+        etherealGardensA11y.setMustTransfer(mustTransfer);
+        etherealGardensA11y.setTransferAssistance(transferAssistance);
+        etherealGardensA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
+        etherealGardensA11y.setAssistiveDevices(assistiveDevices);
+        etherealGardensA11y.setSensoryExperience(sensoryExperience);
+        etherealGardensA11y.setAttraction(etherealGardens);
+        attractionAccessibilityRepository.save(etherealGardensA11y);
+
+
+        Attraction enchantedFalls = new Attraction();
+        enchantedFalls.setName("Enchanted Falls");
+        enchantedFalls.setImageUrl(image);
+        enchantedFalls.setDescription("Discover the Enchanted Falls, a magical waterfall hidden within the heart of the forest. Feel the rejuvenating mist and marvel at its beauty.");
+        enchantedFalls.setLatitude(28.3577);
+        enchantedFalls.setLongitude(81.5909);
+        enchantedFalls.setPark(tinselTownStudios);
+        attractionRepository.save(enchantedFalls);
+
+        AttractionAccessibility enchantedFallsA11y = new AttractionAccessibility();
+        enchantedFallsA11y.setMustTransfer(mustTransfer);
+        enchantedFallsA11y.setTransferAssistance(transferAssistance);
+        enchantedFallsA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
+        enchantedFallsA11y.setAssistiveDevices(assistiveDevices);
+        enchantedFallsA11y.setSensoryExperience(sensoryExperience);
+        enchantedFallsA11y.setAttraction(enchantedFalls);
+        attractionAccessibilityRepository.save(enchantedFallsA11y);
+
+
+        Attraction enchantedGlade = new Attraction();
+        enchantedGlade.setName("Enchanted Glade");
+        enchantedGlade.setImageUrl(image);
+        enchantedGlade.setDescription("Enter the Enchanted Glade, where mystical creatures frolic and ancient trees whisper secrets. Experience the magic of nature.");
+        enchantedGlade.setLatitude(28.3576);
+        enchantedGlade.setLongitude(81.5908);
+        enchantedGlade.setPark(tinselTownStudios);
+        attractionRepository.save(enchantedGlade);
+
+        AttractionAccessibility enchantedGladeA11y = new AttractionAccessibility();
+        enchantedGladeA11y.setMustTransfer(mustTransfer);
+        enchantedGladeA11y.setTransferAssistance(transferAssistance);
+        enchantedGladeA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
+        enchantedGladeA11y.setAssistiveDevices(assistiveDevices);
+        enchantedGladeA11y.setSensoryExperience(sensoryExperience);
+        enchantedGladeA11y.setAttraction(enchantedGlade);
+        attractionAccessibilityRepository.save(enchantedGladeA11y);
+
+
+        Attraction mysticalMaze = new Attraction();
+        mysticalMaze.setName("Mystical Maze");
+        mysticalMaze.setImageUrl(image);
+        mysticalMaze.setDescription("Navigate through the Mystical Maze, a labyrinth of twists and turns filled with magical illusions and hidden passages.");
+        mysticalMaze.setLatitude(28.3577);
+        mysticalMaze.setLongitude(81.5909);
+        mysticalMaze.setPark(tinselTownStudios);
+        attractionRepository.save(mysticalMaze);
+
+        AttractionAccessibility mysticalMazeA11y = new AttractionAccessibility();
+        mysticalMazeA11y.setMustTransfer(mustTransfer);
+        mysticalMazeA11y.setTransferAssistance(transferAssistance);
+        mysticalMazeA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
+        mysticalMazeA11y.setAssistiveDevices(assistiveDevices);
+        mysticalMazeA11y.setSensoryExperience(sensoryExperience);
+        mysticalMazeA11y.setAttraction(mysticalMaze);
+        attractionAccessibilityRepository.save(mysticalMazeA11y);
+
+
+        Attraction whisperingWillows = new Attraction();
+        whisperingWillows.setName("Whispering Willows");
+        whisperingWillows.setImageUrl(image);
+        whisperingWillows.setDescription("Walk among the Whispering Willows, where where ancient trees hold secrets, leaves rustle with ancient tales, and mystical creatures dwell. Listen closely to hear the whispers of the forest.");
+        whisperingWillows.setLatitude(28.3575);
+        whisperingWillows.setLongitude(81.5907);
+        whisperingWillows.setPark(tinselTownStudios);
+        attractionRepository.save(whisperingWillows);
+
+        AttractionAccessibility whisperingWillowsA11y = new AttractionAccessibility();
+        whisperingWillowsA11y.setMustTransfer(mustTransfer);
+        whisperingWillowsA11y.setTransferAssistance(transferAssistance);
+        whisperingWillowsA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
+        whisperingWillowsA11y.setAssistiveDevices(assistiveDevices);
+        whisperingWillowsA11y.setSensoryExperience(sensoryExperience);
+        whisperingWillowsA11y.setAttraction(whisperingWillows);
+        attractionAccessibilityRepository.save(whisperingWillowsA11y);
+
+
+        Attraction mysticalMenagerie = new Attraction();
+        mysticalMenagerie.setName("Mystical Menagerie");
+        mysticalMenagerie.setImageUrl(image);
+        mysticalMenagerie.setDescription("Discover the Mystical Menagerie, home to mythical creatures from all corners of the world. Witness unicorns, dragons, and phoenixes in their natural habitat.");
+        mysticalMenagerie.setLatitude(28.3574);
+        mysticalMenagerie.setLongitude(81.5906);
+        mysticalMenagerie.setPark(tinselTownStudios);
+        attractionRepository.save(mysticalMenagerie);
+
+        AttractionAccessibility mysticalMenagerieA11y = new AttractionAccessibility();
+        mysticalMenagerieA11y.setMustTransfer(mustTransfer);
+        mysticalMenagerieA11y.setTransferAssistance(transferAssistance);
+        mysticalMenagerieA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
+        mysticalMenagerieA11y.setAssistiveDevices(assistiveDevices);
+        mysticalMenagerieA11y.setSensoryExperience(sensoryExperience);
+        mysticalMenagerieA11y.setAttraction(mysticalMenagerie);
+        attractionAccessibilityRepository.save(mysticalMenagerieA11y);
+
+
+        Attraction fairyGrove = new Attraction();
+        fairyGrove.setName("Fairy Grove");
+        fairyGrove.setImageUrl(image);
+        fairyGrove.setDescription("Discover the Fairy Grove, a hidden sanctuary where mystical creatures dwell. Encounter fairies, sprites, and other fantastical beings in this whimsical forest realm.");
+        fairyGrove.setLatitude(28.3576);
+        fairyGrove.setLongitude(81.5908);
+        fairyGrove.setPark(tinselTownStudios);
+        attractionRepository.save(fairyGrove);
+
+        AttractionAccessibility fairyGroveA11y = new AttractionAccessibility();
+        fairyGroveA11y.setMustTransfer(mustTransfer);
+        fairyGroveA11y.setTransferAssistance(transferAssistance);
+        fairyGroveA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
+        fairyGroveA11y.setAssistiveDevices(assistiveDevices);
+        fairyGroveA11y.setSensoryExperience(sensoryExperience);
+        fairyGroveA11y.setAttraction(fairyGrove);
+        attractionAccessibilityRepository.save(fairyGroveA11y);
+
+
+        Attraction twilightTreetops = new Attraction();
+        twilightTreetops.setName("Twilight Treetops");
+        twilightTreetops.setImageUrl(image);
+        twilightTreetops.setDescription("Ascend to the Twilight Treetops, where the forest canopy comes alive with magic under the shimmering light of the moon. Glide through the treetops on a mystical journey of wonder and enchantment.");
+        twilightTreetops.setLatitude(28.3579);
+        twilightTreetops.setLongitude(81.5911);
+        twilightTreetops.setPark(tinselTownStudios);
+        attractionRepository.save(twilightTreetops);
+
+        AttractionAccessibility twilightTreetopsA11y = new AttractionAccessibility();
+        twilightTreetopsA11y.setMustTransfer(mustTransfer);
+        twilightTreetopsA11y.setTransferAssistance(transferAssistance);
+        twilightTreetopsA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
+        twilightTreetopsA11y.setAssistiveDevices(assistiveDevices);
+        twilightTreetopsA11y.setSensoryExperience(sensoryExperience);
+        twilightTreetopsA11y.setAttraction(twilightTreetops);
+        attractionAccessibilityRepository.save(twilightTreetopsA11y);
+
+
+        Attraction celestialCaverns = new Attraction();
+        celestialCaverns.setName("Celestial Caverns");
+        celestialCaverns.setImageUrl(image);
+        celestialCaverns.setDescription("Explore the Celestial Caverns, a subterranean wonderland illuminated by glowing crystals and ancient starlight. Journey through caverns filled with mystery and awe as you uncover the secrets of the earth.");
+        celestialCaverns.setLatitude(28.3580);
+        celestialCaverns.setLongitude(81.5912);
+        celestialCaverns.setPark(tinselTownStudios);
+        attractionRepository.save(celestialCaverns);
+
+        AttractionAccessibility celestialCavernsA11y = new AttractionAccessibility();
+        celestialCavernsA11y.setMustTransfer(mustTransfer);
+        celestialCavernsA11y.setTransferAssistance(transferAssistance);
+        celestialCavernsA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
+        celestialCavernsA11y.setAssistiveDevices(assistiveDevices);
+        celestialCavernsA11y.setSensoryExperience(sensoryExperience);
+        celestialCavernsA11y.setAttraction(celestialCaverns);
+        attractionAccessibilityRepository.save(celestialCavernsA11y);
+
+
+        Attraction emeraldFalls = new Attraction();
+        emeraldFalls.setName("Emerald Falls");
+        emeraldFalls.setImageUrl(image);
+        emeraldFalls.setDescription("Marvel at the beauty of Emerald Falls, where sparkling waters cascade down emerald-hued cliffs. Experience the tranquility of this hidden oasis as you bask in its serene atmosphere.");
+        emeraldFalls.setLatitude(28.3581);
+        emeraldFalls.setLongitude(81.5913);
+        emeraldFalls.setPark(tinselTownStudios);
+        attractionRepository.save(emeraldFalls);
+
+        AttractionAccessibility emeraldFallsA11y = new AttractionAccessibility();
+        emeraldFallsA11y.setMustTransfer(mustTransfer);
+        emeraldFallsA11y.setTransferAssistance(transferAssistance);
+        emeraldFallsA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
+        emeraldFallsA11y.setAssistiveDevices(assistiveDevices);
+        emeraldFallsA11y.setSensoryExperience(sensoryExperience);
+        emeraldFallsA11y.setAttraction(emeraldFalls);
+        attractionAccessibilityRepository.save(emeraldFallsA11y);
+
+
+        Attraction arcaneArboretum = new Attraction();
+        arcaneArboretum.setName("Arcane Arboretum");
+        arcaneArboretum.setImageUrl(image);
+        arcaneArboretum.setDescription("Enter the Arcane Arboretum, where ancient trees hold the secrets of centuries past. Wander among rare flora and fauna as you uncover the mysteries of this enchanted forest.");
+        arcaneArboretum.setLatitude(28.3582);
+        arcaneArboretum.setLongitude(81.5914);
+        arcaneArboretum.setPark(tinselTownStudios);
+        attractionRepository.save(arcaneArboretum);
+
+        AttractionAccessibility arcaneArboretumA11y = new AttractionAccessibility();
+        arcaneArboretumA11y.setMustTransfer(mustTransfer);
+        arcaneArboretumA11y.setTransferAssistance(transferAssistance);
+        arcaneArboretumA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
+        arcaneArboretumA11y.setAssistiveDevices(assistiveDevices);
+        arcaneArboretumA11y.setSensoryExperience(sensoryExperience);
+        arcaneArboretumA11y.setAttraction(arcaneArboretum);
+        attractionAccessibilityRepository.save(arcaneArboretumA11y);
+
+
+        Attraction crystalCove = new Attraction();
+        crystalCove.setName("Crystal Cove");
+        crystalCove.setImageUrl(image);
+        crystalCove.setDescription("Embark on an adventure to Crystal Cove, a hidden gem nestled within the heart of the forest. Discover shimmering pools, crystal formations, and mystical caves as you journey through this enchanting landscape.");
+        crystalCove.setLatitude(28.3583);
+        crystalCove.setLongitude(81.5915);
+        crystalCove.setPark(tinselTownStudios);
+        attractionRepository.save(crystalCove);
+
+        AttractionAccessibility crystalCoveA11y = new AttractionAccessibility();
+        crystalCoveA11y.setMustTransfer(mustTransfer);
+        crystalCoveA11y.setTransferAssistance(transferAssistance);
+        crystalCoveA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
+        crystalCoveA11y.setAssistiveDevices(assistiveDevices);
+        crystalCoveA11y.setSensoryExperience(sensoryExperience);
+        crystalCoveA11y.setAttraction(crystalCove);
+        attractionAccessibilityRepository.save(crystalCoveA11y);
+
+
+        Attraction nymphsNook = new Attraction();
+        nymphsNook.setName("Nymph's Nook");
+        nymphsNook.setImageUrl(image);
+        nymphsNook.setDescription("Find solace in Nymph's Nook, a tranquil sanctuary where the spirits of the forest dwell. Connect with nature and experience the serenity of this magical glade.");
+        nymphsNook.setLatitude(28.3584);
+        nymphsNook.setLongitude(81.5916);
+        nymphsNook.setPark(tinselTownStudios);
+        attractionRepository.save(nymphsNook);
+
+        AttractionAccessibility nymphsNookA11y = new AttractionAccessibility();
+        nymphsNookA11y.setMustTransfer(mustTransfer);
+        nymphsNookA11y.setTransferAssistance(transferAssistance);
+        nymphsNookA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
+        nymphsNookA11y.setAssistiveDevices(assistiveDevices);
+        nymphsNookA11y.setSensoryExperience(sensoryExperience);
+        nymphsNookA11y.setAttraction(nymphsNook);
+        attractionAccessibilityRepository.save(nymphsNookA11y);
+
+
+
+
         Park expeditionIsle = new Park();
         expeditionIsle.setName("Expedition Isle");
         expeditionIsle.setImageUrl("https://img.freepik.com/photos-premium/cascade-dans-jungle_737761-2192.jpg");
         expeditionIsle.setDescription("Step into the adventure at Malt Fizzby's Expedition Isle, where the magic of exploring the unknown comes to life.");
-        expeditionIsle.setLatitude(28.357373);
-        expeditionIsle.setLongitude(-81.560117);
+        expeditionIsle.setLatitude(28.360317);
+        expeditionIsle.setLongitude(-81.591293);
         parkRepository.save(expeditionIsle);
 
         ParkAccessibility expeditionIsleA11y = new ParkAccessibility();
@@ -690,279 +963,6 @@ public class SeedData implements CommandLineRunner {
         lostTribesTrailA11y.setSensoryExperience(sensoryExperience);
         lostTribesTrailA11y.setAttraction(lostTribesTrail);
         attractionAccessibilityRepository.save(lostTribesTrailA11y);
-
-
-
-
-        Park mysticalForest = new Park();
-        mysticalForest.setName("Mystical Forest");
-        mysticalForest.setImageUrl("https://t3.ftcdn.net/jpg/06/10/66/24/360_F_610662465_iflFvBuFDazEDvnLSwMiElTI4jDIdpdK.jpg");
-        mysticalForest.setDescription("Embark on a wild expedition at Malt Fizzby's Mystical Forest. Encounter exotic animals, enjoy thrilling rides, and connect with nature in immersive and educational experiences that inspire a deeper appreciation for our planet's wildlife and ecosystems.");
-        mysticalForest.setLatitude(28.360317);
-        mysticalForest.setLongitude(-81.591293);
-        parkRepository.save(mysticalForest);
-
-        ParkAccessibility mysticalForestA11y = new ParkAccessibility();
-        mysticalForestA11y.setRentalLocations(randomList);
-        mysticalForestA11y.setWheelchairReplacementLocations(randomList);
-        mysticalForestA11y.setBreakLocations(randomList);
-        mysticalForestA11y.setStationaryBrailleMapLocations(randomList);
-        mysticalForestA11y.setSignLanguageSchedule(schedule);
-        mysticalForestA11y.setGuestRelationsLocations(randomList);
-        mysticalForestA11y.setServiceAnimalRestrictions_Ride(randomList);
-        mysticalForestA11y.setServiceAnimalRestrictions_Board(randomList);
-        mysticalForestA11y.setServiceAnimalReliefAreas(randomList);
-        mysticalForestA11y.setCompanionRestroomLocations(randomList);
-        mysticalForestA11y.setFirstAidLocations("by front entrance");
-        mysticalForestA11y.setPark(mysticalForest);
-        parkAccessibilityRepository.save(mysticalForestA11y);
-
-
-        Attraction etherealGardens = new Attraction();
-        etherealGardens.setName("Ethereal Gardens");
-        etherealGardens.setImageUrl("https://drive.google.com/thumbnail?id=12xb4AxNSIDkE6Qbw5KcjSytQyjuwPmo4&sz=w200-h200");
-        etherealGardens.setDescription("A serene oasis within the Mystical Forest, these gardens bloom with otherworldly flowers. Each blossom grants a wish—choose wisely!");
-        etherealGardens.setLatitude(12.24);
-        etherealGardens.setLongitude(20.17);
-        etherealGardens.setPark(mysticalForest);
-        attractionRepository.save(etherealGardens);
-
-        AttractionAccessibility etherealGardensA11y = new AttractionAccessibility();
-        etherealGardensA11y.setMustTransfer(mustTransfer);
-        etherealGardensA11y.setTransferAssistance(transferAssistance);
-        etherealGardensA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
-        etherealGardensA11y.setAssistiveDevices(assistiveDevices);
-        etherealGardensA11y.setSensoryExperience(sensoryExperience);
-        etherealGardensA11y.setAttraction(etherealGardens);
-        attractionAccessibilityRepository.save(etherealGardensA11y);
-
-
-        Attraction enchantedFalls = new Attraction();
-        enchantedFalls.setName("Enchanted Falls");
-        enchantedFalls.setImageUrl(image);
-        enchantedFalls.setDescription("Discover the Enchanted Falls, a magical waterfall hidden within the heart of the forest. Feel the rejuvenating mist and marvel at its beauty.");
-        enchantedFalls.setLatitude(28.3577);
-        enchantedFalls.setLongitude(81.5909);
-        enchantedFalls.setPark(mysticalForest);
-        attractionRepository.save(enchantedFalls);
-
-        AttractionAccessibility enchantedFallsA11y = new AttractionAccessibility();
-        enchantedFallsA11y.setMustTransfer(mustTransfer);
-        enchantedFallsA11y.setTransferAssistance(transferAssistance);
-        enchantedFallsA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
-        enchantedFallsA11y.setAssistiveDevices(assistiveDevices);
-        enchantedFallsA11y.setSensoryExperience(sensoryExperience);
-        enchantedFallsA11y.setAttraction(enchantedFalls);
-        attractionAccessibilityRepository.save(enchantedFallsA11y);
-
-
-        Attraction enchantedGlade = new Attraction();
-        enchantedGlade.setName("Enchanted Glade");
-        enchantedGlade.setImageUrl(image);
-        enchantedGlade.setDescription("Enter the Enchanted Glade, where mystical creatures frolic and ancient trees whisper secrets. Experience the magic of nature.");
-        enchantedGlade.setLatitude(28.3576);
-        enchantedGlade.setLongitude(81.5908);
-        enchantedGlade.setPark(mysticalForest);
-        attractionRepository.save(enchantedGlade);
-
-        AttractionAccessibility enchantedGladeA11y = new AttractionAccessibility();
-        enchantedGladeA11y.setMustTransfer(mustTransfer);
-        enchantedGladeA11y.setTransferAssistance(transferAssistance);
-        enchantedGladeA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
-        enchantedGladeA11y.setAssistiveDevices(assistiveDevices);
-        enchantedGladeA11y.setSensoryExperience(sensoryExperience);
-        enchantedGladeA11y.setAttraction(enchantedGlade);
-        attractionAccessibilityRepository.save(enchantedGladeA11y);
-
-
-        Attraction mysticalMaze = new Attraction();
-        mysticalMaze.setName("Mystical Maze");
-        mysticalMaze.setImageUrl(image);
-        mysticalMaze.setDescription("Navigate through the Mystical Maze, a labyrinth of twists and turns filled with magical illusions and hidden passages.");
-        mysticalMaze.setLatitude(28.3577);
-        mysticalMaze.setLongitude(81.5909);
-        mysticalMaze.setPark(mysticalForest);
-        attractionRepository.save(mysticalMaze);
-
-        AttractionAccessibility mysticalMazeA11y = new AttractionAccessibility();
-        mysticalMazeA11y.setMustTransfer(mustTransfer);
-        mysticalMazeA11y.setTransferAssistance(transferAssistance);
-        mysticalMazeA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
-        mysticalMazeA11y.setAssistiveDevices(assistiveDevices);
-        mysticalMazeA11y.setSensoryExperience(sensoryExperience);
-        mysticalMazeA11y.setAttraction(mysticalMaze);
-        attractionAccessibilityRepository.save(mysticalMazeA11y);
-
-
-        Attraction whisperingWillows = new Attraction();
-        whisperingWillows.setName("Whispering Willows");
-        whisperingWillows.setImageUrl(image);
-        whisperingWillows.setDescription("Walk among the Whispering Willows, where where ancient trees hold secrets, leaves rustle with ancient tales, and mystical creatures dwell. Listen closely to hear the whispers of the forest.");
-        whisperingWillows.setLatitude(28.3575);
-        whisperingWillows.setLongitude(81.5907);
-        whisperingWillows.setPark(mysticalForest);
-        attractionRepository.save(whisperingWillows);
-
-        AttractionAccessibility whisperingWillowsA11y = new AttractionAccessibility();
-        whisperingWillowsA11y.setMustTransfer(mustTransfer);
-        whisperingWillowsA11y.setTransferAssistance(transferAssistance);
-        whisperingWillowsA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
-        whisperingWillowsA11y.setAssistiveDevices(assistiveDevices);
-        whisperingWillowsA11y.setSensoryExperience(sensoryExperience);
-        whisperingWillowsA11y.setAttraction(whisperingWillows);
-        attractionAccessibilityRepository.save(whisperingWillowsA11y);
-
-
-        Attraction mysticalMenagerie = new Attraction();
-        mysticalMenagerie.setName("Mystical Menagerie");
-        mysticalMenagerie.setImageUrl(image);
-        mysticalMenagerie.setDescription("Discover the Mystical Menagerie, home to mythical creatures from all corners of the world. Witness unicorns, dragons, and phoenixes in their natural habitat.");
-        mysticalMenagerie.setLatitude(28.3574);
-        mysticalMenagerie.setLongitude(81.5906);
-        mysticalMenagerie.setPark(mysticalForest);
-        attractionRepository.save(mysticalMenagerie);
-
-        AttractionAccessibility mysticalMenagerieA11y = new AttractionAccessibility();
-        mysticalMenagerieA11y.setMustTransfer(mustTransfer);
-        mysticalMenagerieA11y.setTransferAssistance(transferAssistance);
-        mysticalMenagerieA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
-        mysticalMenagerieA11y.setAssistiveDevices(assistiveDevices);
-        mysticalMenagerieA11y.setSensoryExperience(sensoryExperience);
-        mysticalMenagerieA11y.setAttraction(mysticalMenagerie);
-        attractionAccessibilityRepository.save(mysticalMenagerieA11y);
-
-
-        Attraction fairyGrove = new Attraction();
-        fairyGrove.setName("Fairy Grove");
-        fairyGrove.setImageUrl(image);
-        fairyGrove.setDescription("Discover the Fairy Grove, a hidden sanctuary where mystical creatures dwell. Encounter fairies, sprites, and other fantastical beings in this whimsical forest realm.");
-        fairyGrove.setLatitude(28.3576);
-        fairyGrove.setLongitude(81.5908);
-        fairyGrove.setPark(mysticalForest);
-        attractionRepository.save(fairyGrove);
-
-        AttractionAccessibility fairyGroveA11y = new AttractionAccessibility();
-        fairyGroveA11y.setMustTransfer(mustTransfer);
-        fairyGroveA11y.setTransferAssistance(transferAssistance);
-        fairyGroveA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
-        fairyGroveA11y.setAssistiveDevices(assistiveDevices);
-        fairyGroveA11y.setSensoryExperience(sensoryExperience);
-        fairyGroveA11y.setAttraction(fairyGrove);
-        attractionAccessibilityRepository.save(fairyGroveA11y);
-
-
-        Attraction twilightTreetops = new Attraction();
-        twilightTreetops.setName("Twilight Treetops");
-        twilightTreetops.setImageUrl(image);
-        twilightTreetops.setDescription("Ascend to the Twilight Treetops, where the forest canopy comes alive with magic under the shimmering light of the moon. Glide through the treetops on a mystical journey of wonder and enchantment.");
-        twilightTreetops.setLatitude(28.3579);
-        twilightTreetops.setLongitude(81.5911);
-        twilightTreetops.setPark(mysticalForest);
-        attractionRepository.save(twilightTreetops);
-
-        AttractionAccessibility twilightTreetopsA11y = new AttractionAccessibility();
-        twilightTreetopsA11y.setMustTransfer(mustTransfer);
-        twilightTreetopsA11y.setTransferAssistance(transferAssistance);
-        twilightTreetopsA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
-        twilightTreetopsA11y.setAssistiveDevices(assistiveDevices);
-        twilightTreetopsA11y.setSensoryExperience(sensoryExperience);
-        twilightTreetopsA11y.setAttraction(twilightTreetops);
-        attractionAccessibilityRepository.save(twilightTreetopsA11y);
-
-
-        Attraction celestialCaverns = new Attraction();
-        celestialCaverns.setName("Celestial Caverns");
-        celestialCaverns.setImageUrl(image);
-        celestialCaverns.setDescription("Explore the Celestial Caverns, a subterranean wonderland illuminated by glowing crystals and ancient starlight. Journey through caverns filled with mystery and awe as you uncover the secrets of the earth.");
-        celestialCaverns.setLatitude(28.3580);
-        celestialCaverns.setLongitude(81.5912);
-        celestialCaverns.setPark(mysticalForest);
-        attractionRepository.save(celestialCaverns);
-
-        AttractionAccessibility celestialCavernsA11y = new AttractionAccessibility();
-        celestialCavernsA11y.setMustTransfer(mustTransfer);
-        celestialCavernsA11y.setTransferAssistance(transferAssistance);
-        celestialCavernsA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
-        celestialCavernsA11y.setAssistiveDevices(assistiveDevices);
-        celestialCavernsA11y.setSensoryExperience(sensoryExperience);
-        celestialCavernsA11y.setAttraction(celestialCaverns);
-        attractionAccessibilityRepository.save(celestialCavernsA11y);
-
-
-        Attraction emeraldFalls = new Attraction();
-        emeraldFalls.setName("Emerald Falls");
-        emeraldFalls.setImageUrl(image);
-        emeraldFalls.setDescription("Marvel at the beauty of Emerald Falls, where sparkling waters cascade down emerald-hued cliffs. Experience the tranquility of this hidden oasis as you bask in its serene atmosphere.");
-        emeraldFalls.setLatitude(28.3581);
-        emeraldFalls.setLongitude(81.5913);
-        emeraldFalls.setPark(mysticalForest);
-        attractionRepository.save(emeraldFalls);
-
-        AttractionAccessibility emeraldFallsA11y = new AttractionAccessibility();
-        emeraldFallsA11y.setMustTransfer(mustTransfer);
-        emeraldFallsA11y.setTransferAssistance(transferAssistance);
-        emeraldFallsA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
-        emeraldFallsA11y.setAssistiveDevices(assistiveDevices);
-        emeraldFallsA11y.setSensoryExperience(sensoryExperience);
-        emeraldFallsA11y.setAttraction(emeraldFalls);
-        attractionAccessibilityRepository.save(emeraldFallsA11y);
-        
-
-        Attraction arcaneArboretum = new Attraction();
-        arcaneArboretum.setName("Arcane Arboretum");
-        arcaneArboretum.setImageUrl(image);
-        arcaneArboretum.setDescription("Enter the Arcane Arboretum, where ancient trees hold the secrets of centuries past. Wander among rare flora and fauna as you uncover the mysteries of this enchanted forest.");
-        arcaneArboretum.setLatitude(28.3582);
-        arcaneArboretum.setLongitude(81.5914);
-        arcaneArboretum.setPark(mysticalForest);
-        attractionRepository.save(arcaneArboretum);
-
-        AttractionAccessibility arcaneArboretumA11y = new AttractionAccessibility();
-        arcaneArboretumA11y.setMustTransfer(mustTransfer);
-        arcaneArboretumA11y.setTransferAssistance(transferAssistance);
-        arcaneArboretumA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
-        arcaneArboretumA11y.setAssistiveDevices(assistiveDevices);
-        arcaneArboretumA11y.setSensoryExperience(sensoryExperience);
-        arcaneArboretumA11y.setAttraction(arcaneArboretum);
-        attractionAccessibilityRepository.save(arcaneArboretumA11y);
-
-
-        Attraction crystalCove = new Attraction();
-        crystalCove.setName("Crystal Cove");
-        crystalCove.setImageUrl(image);
-        crystalCove.setDescription("Embark on an adventure to Crystal Cove, a hidden gem nestled within the heart of the forest. Discover shimmering pools, crystal formations, and mystical caves as you journey through this enchanting landscape.");
-        crystalCove.setLatitude(28.3583);
-        crystalCove.setLongitude(81.5915);
-        crystalCove.setPark(mysticalForest);
-        attractionRepository.save(crystalCove);
-
-        AttractionAccessibility crystalCoveA11y = new AttractionAccessibility();
-        crystalCoveA11y.setMustTransfer(mustTransfer);
-        crystalCoveA11y.setTransferAssistance(transferAssistance);
-        crystalCoveA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
-        crystalCoveA11y.setAssistiveDevices(assistiveDevices);
-        crystalCoveA11y.setSensoryExperience(sensoryExperience);
-        crystalCoveA11y.setAttraction(crystalCove);
-        attractionAccessibilityRepository.save(crystalCoveA11y);
-        
-
-        Attraction nymphsNook = new Attraction();
-        nymphsNook.setName("Nymph's Nook");
-        nymphsNook.setImageUrl(image);
-        nymphsNook.setDescription("Find solace in Nymph's Nook, a tranquil sanctuary where the spirits of the forest dwell. Connect with nature and experience the serenity of this magical glade.");
-        nymphsNook.setLatitude(28.3584);
-        nymphsNook.setLongitude(81.5916);
-        nymphsNook.setPark(mysticalForest);
-        attractionRepository.save(nymphsNook);
-        
-        AttractionAccessibility nymphsNookA11y = new AttractionAccessibility();
-        nymphsNookA11y.setMustTransfer(mustTransfer);
-        nymphsNookA11y.setTransferAssistance(transferAssistance);
-        nymphsNookA11y.setServiceAnimalRestrictions(serviceAnimalRestrictions);
-        nymphsNookA11y.setAssistiveDevices(assistiveDevices);
-        nymphsNookA11y.setSensoryExperience(sensoryExperience);
-        nymphsNookA11y.setAttraction(nymphsNook);
-        attractionAccessibilityRepository.save(nymphsNookA11y);
 
 
 
